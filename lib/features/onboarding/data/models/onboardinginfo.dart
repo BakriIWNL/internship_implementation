@@ -1,4 +1,4 @@
-import 'package:itcores_internship_project/core/utils/app_assets.dart';
+import 'package:itcores_internship_project/core/themes/app_assets.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
 
 class OnBoardingInfo {
