@@ -6,7 +6,7 @@ class SplashScreenState {
   });
   final SplashStates state;
 
-  static SplashScreenState active() {
+  factory SplashScreenState.active() {
     return SplashScreenState(
       state: SplashStates.active,
     );

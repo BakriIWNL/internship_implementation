@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/utils/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/cubit/carousel/carousel_cubit.dart';
@@ -25,14 +26,14 @@ class OnboardingScreen extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     fixedSize:
-                        (Size(MediaQuery.of(context).size.width * 0.915, 56.h)),
+                        (Size(343.w, 56.h)),
                     backgroundColor: AppColors.purplePrimary,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.r),
                     ),
                   ),
                   onPressed: () {
-                    context.go('/signup');
+                    context.go(RouteNames.signUp);
                   },
                   child: Text(AppStrings.signUp,
                       style: TextStyle(
@@ -44,14 +45,14 @@ class OnboardingScreen extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     fixedSize:
-                        (Size(MediaQuery.of(context).size.width * 0.915, 56.h)),
+                        (Size(343.w, 56.h)),
                     backgroundColor: AppColors.purpleSecondary,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.r),
                     ),
                   ),
                   onPressed: () {
-                    context.go('/signup');
+                    context.go(RouteNames.login);
                   },
                   child: Text(
                     AppStrings.logIn,
