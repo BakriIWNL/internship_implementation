@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:itcores_internship_project/core/utils/app_colors.dart';
-import 'package:itcores_internship_project/core/utils/onboardinginfo.dart';
+import 'package:itcores_internship_project/features/onboarding/data/models/onboardinginfo.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/cubit/carousel/carousel_cubit.dart';
 
-class Carousel extends StatefulWidget {
-  Carousel({Key? key}) : super(key: key);
+class OnboardingCarousel extends StatefulWidget {
+  const OnboardingCarousel({super.key});
 
   @override
-  State<Carousel> createState() => _CarouselSliderWidgetState();
+  State<OnboardingCarousel> createState() => _OnboardingCarouselState();
 }
 
-class _CarouselSliderWidgetState extends State<Carousel> {
+class _OnboardingCarouselState extends State<OnboardingCarousel> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CarouselCubit, CarouselState>(
@@ -21,7 +20,7 @@ class _CarouselSliderWidgetState extends State<Carousel> {
         return Expanded(
           flex: 3,
           child: PageView(
-            controller: context.read<CarouselCubit>().pageController,        
+            controller: context.read<CarouselCubit>().pageController,
             onPageChanged: (value) =>
                 context.read<CarouselCubit>().onPageChanged(
                       currentPage: value,
@@ -41,7 +40,7 @@ class _CarouselSliderWidgetState extends State<Carousel> {
                     Text(
                       OnBoardingInfo
                           .onBoardingInfoList[state.currentPage].title,
-                      style: GoogleFonts.inter(
+                      style: TextStyle(
                           color: AppColors.blackText,
                           fontSize: 32.sp,
                           fontWeight: FontWeight.w700),
@@ -51,11 +50,10 @@ class _CarouselSliderWidgetState extends State<Carousel> {
                     Text(
                       OnBoardingInfo
                           .onBoardingInfoList[state.currentPage].subTitle,
-                      style: GoogleFonts.inter(
-                        color: AppColors.greyText,
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                      ),
+                      style: TextStyle(
+                          color: AppColors.greyText,
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500),
                       textAlign: TextAlign.center,
                     ),
                   ],

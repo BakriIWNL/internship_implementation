@@ -1,5 +1,5 @@
 class AppStrings {
-  static const String montra = "montra";
+  static const String appName = "montra";
 
   //Onboarding Strings
   static const String gainTotal = "Gain total control of your money";

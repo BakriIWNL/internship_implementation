@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:itcores_internship_project/core/utils/routes.dart';
+import 'package:itcores_internship_project/core/utils/app_strings.dart';
+import 'package:itcores_internship_project/core/routes/routes.dart';
 
 void main() {
   runApp(const MainApp());
@@ -16,8 +17,11 @@ class MainApp extends StatelessWidget {
       builder: (context, child){
         return MaterialApp.router(
           routerConfig: Routes.routes,
-          title: 'montra',
+          title: AppStrings.appName,
           debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            fontFamily: 'Inter',
+          ),
       );
       },
     );

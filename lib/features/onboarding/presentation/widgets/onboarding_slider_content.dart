@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class SliderContent extends StatelessWidget {
   final String imagePath;
@@ -8,6 +7,7 @@ class SliderContent extends StatelessWidget {
   final String subHeading;
 
   const SliderContent({
+    super.key,
     required this.imagePath,
     required this.heading,
     required this.subHeading,
@@ -23,26 +23,18 @@ class SliderContent extends StatelessWidget {
           width: 312.w,
           height: 312.h,
         ),
-
         41.verticalSpace,
-
-        Text(
-          heading,
-          style: GoogleFonts.inter(
-            fontSize: 32.sp,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
-
+        Text(heading,
+            style: TextStyle(
+              fontSize: 32.sp,
+              fontWeight: FontWeight.w700,
+            )),
         17.verticalSpace,
-
-        Text(
-          subHeading,
-          style: GoogleFonts.inter(
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
+        Text(subHeading,
+            style: TextStyle(
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w500,
+            )),
       ],
     );
   }
