@@ -5,14 +5,9 @@ import 'package:itcores_internship_project/core/utils/app_colors.dart';
 import 'package:itcores_internship_project/features/onboarding/data/models/onboardinginfo.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/cubit/carousel/carousel_cubit.dart';
 
-class OnboardingCarousel extends StatefulWidget {
+class OnboardingCarousel extends StatelessWidget {
   const OnboardingCarousel({super.key});
 
-  @override
-  State<OnboardingCarousel> createState() => _OnboardingCarouselState();
-}
-
-class _OnboardingCarouselState extends State<OnboardingCarousel> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CarouselCubit, CarouselState>(

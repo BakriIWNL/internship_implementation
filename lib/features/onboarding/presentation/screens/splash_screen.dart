@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/utils/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/core/utils/enums.dart';
@@ -16,7 +17,7 @@ class SplashScreen extends StatelessWidget {
     return BlocListener<SplashScreenCubit, SplashScreenState>(
       listener: (context, state) {
         if (state.state == SplashStates.concluded) {
-          context.go('/onboarding');
+          context.go(RouteNames.onboarding);
         }
       },
       child: Scaffold(
