@@ -1,23 +1,26 @@
-// part of 'login_cubit.dart';
+part of 'login_cubit.dart';
 
-// class LoginState {
-//   final GenericStates state;
+class LoginState {
+  final GenericStates state;
+  final bool isPasswordVisible;
+  const LoginState({
+    required this.state,this.isPasswordVisible = false,
+  });
 
-//   const LoginState({
-//     required this.state,
-//   });
+  factory LoginState.initial() {
+    return const LoginState(
+      state: GenericStates.initial,
+      isPasswordVisible: false,
+    );
+  }
 
-//   factory LoginState.initial() {
-//     return const LoginState(
-//       state: GenericStates.initial,
-//     );
-//   }
-
-//   LoginState copyWith({
-//     GenericStates? state
-//   }) {
-//     return LoginState(
-//       state: state ?? this.state,
-//     );
-//   }
-// }
+  LoginState copyWith({
+    GenericStates? state,
+    bool? isPasswordVisible
+  }) {
+    return LoginState(
+      state: state ?? this.state,
+      isPasswordVisible: isPasswordVisible ?? this.isPasswordVisible
+    );
+  }
+}
