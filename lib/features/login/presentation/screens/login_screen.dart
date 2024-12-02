@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/components/customtextfield.dart';
-import 'package:itcores_internship_project/core/components/purple_button.dart';
+import 'package:itcores_internship_project/core/components/custom_button.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_assets.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';

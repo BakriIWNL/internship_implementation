@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:itcores_internship_project/core/components/light_purple_button.dart';
-import 'package:itcores_internship_project/core/components/purple_button.dart';
+import 'package:itcores_internship_project/core/components/custom_button.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
+import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/cubit/carousel/carousel_cubit.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/widgets/onboarding_carousel_indicator.dart';
@@ -23,9 +23,18 @@ class OnboardingScreen extends StatelessWidget {
               children: [
                 const OnboardingCarousel(),
                 const OnboardingCarouselIndicator(),
-                PurpleButton(text: AppStrings.signUp, onPressed: () => context.go(RouteNames.signUp), size: Size(343.w, 56.h)),
+                CustomButton(
+                    text: AppStrings.signUp,
+                    onPressed: () => context.go(RouteNames.signUp),
+                    size: Size(343.w, 56.h)),
                 16.verticalSpace,
-                LightPurpleButton(text: AppStrings.logIn, onPressed: () => context.go(RouteNames.login), size: Size(343.w, 56.h)),
+                CustomButton(
+                  text: AppStrings.logIn,
+                  onPressed: () => context.go(RouteNames.login),
+                  size: Size(343.w, 56.h),
+                  textColor: AppColors.purplePrimary,
+                  backgroundColor: AppColors.purpleSecondary,
+                ),
               ],
             ),
           );

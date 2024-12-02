@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/validationconditions.dart';
-import 'package:itcores_internship_project/features/signup/presentation/cubits/signup/signup_cubit.dart';
 
 class NewCustomTextField extends StatelessWidget {
   const NewCustomTextField(
@@ -23,6 +21,7 @@ class NewCustomTextField extends StatelessWidget {
   final double height;
   final double width;
   final bool password;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +30,7 @@ class NewCustomTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.r),
       ),
       child: TextFormField(
-        obscureText: (context.read<SignupCubit>().passwordVisible || !password) ? false : true,
+        obscureText: (password) ? false : true,
         autocorrect: false,
         controller: controller,
         cursorColor: AppColors.greyPrimary,
