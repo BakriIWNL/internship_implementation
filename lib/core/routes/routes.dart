@@ -7,6 +7,7 @@ import 'package:itcores_internship_project/features/onboarding/presentation/cubi
 import 'package:itcores_internship_project/features/onboarding/presentation/cubit/splash_screen/splash_screen_cubit.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/screens/splash_screen.dart';
+import 'package:itcores_internship_project/features/signup/presentation/cubits/signup/signup_cubit.dart';
 import 'package:itcores_internship_project/features/signup/presentation/screens/signup_screen.dart';
 
 class Routes {
@@ -44,7 +45,14 @@ class Routes {
           builder: (context, state) => const LogInScreen()),
       GoRoute(
           path: RouteNames.signUp,
-          builder: (context, state) => const SignUpScreen()),
+          builder: (context, state) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => SignupCubit(),
+              ),
+            ],
+            child: SignUpScreen(),
+          ) ),
     ],
   );
 }

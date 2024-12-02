@@ -14,5 +14,13 @@ class AppStrings {
 
   //signup Strings
   static const String signUp = "Sign Up";
-
+  static const String email = "Email";
+  static const String password = "Password";
+  static const String name = "Name";
+  static const String signUpAgree = "By signing up, you agree to the ";
+  static const String termsAndConditions = "Terms of Service and Privacy Policy";
+  static const String termsAndConditionsLink = "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service";
+  static const String alreadyHaveAccount = "Already have an account? ";
+  static const String orWith = "Or sign up with";
+  static const String googleSignUp = "Sign up with Google";
 }

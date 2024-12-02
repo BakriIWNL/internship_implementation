@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:itcores_internship_project/core/components/light_purple_button.dart';
+import 'package:itcores_internship_project/core/components/purple_button.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
-import 'package:itcores_internship_project/core/utils/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/cubit/carousel/carousel_cubit.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/widgets/onboarding_carousel_indicator.dart';
@@ -22,46 +23,9 @@ class OnboardingScreen extends StatelessWidget {
               children: [
                 const OnboardingCarousel(),
                 const OnboardingCarouselIndicator(),
-                // 33.verticalSpace,
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    fixedSize:
-                        (Size(343.w, 56.h)),
-                    backgroundColor: AppColors.purplePrimary,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                    ),
-                  ),
-                  onPressed: () {
-                    context.go(RouteNames.signUp);
-                  },
-                  child: Text(AppStrings.signUp,
-                      style: TextStyle(
-                          color: AppColors.white,
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w600)),
-                ),
+                PurpleButton(text: AppStrings.signUp, onPressed: () => context.go(RouteNames.signUp), size: Size(343.w, 56.h)),
                 16.verticalSpace,
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    fixedSize:
-                        (Size(343.w, 56.h)),
-                    backgroundColor: AppColors.purpleSecondary,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                    ),
-                  ),
-                  onPressed: () {
-                    context.go(RouteNames.login);
-                  },
-                  child: Text(
-                    AppStrings.logIn,
-                    style: TextStyle(
-                        color: AppColors.purplePrimary,
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w600),
-                  ),
-                )
+                LightPurpleButton(text: AppStrings.logIn, onPressed: () => context.go(RouteNames.login), size: Size(343.w, 56.h)),
               ],
             ),
           );
