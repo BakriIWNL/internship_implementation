@@ -96,7 +96,7 @@ class SignUpScreen extends StatelessWidget {
                           validationType: AppStrings.password,
                           height: 56.h,
                           width: 343.w,
-                          icon: !context.read<SignupCubit>().passwordVisible
+                          icon: !state.isPasswordVisible
                               ? IconButton(
                                   onPressed: () {
                                     context

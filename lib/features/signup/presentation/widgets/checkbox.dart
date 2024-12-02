@@ -25,7 +25,7 @@ class CheckBox extends StatelessWidget {
                 activeColor: AppColors.purplePrimary,
                 checkColor: AppColors.white,
                 focusColor: AppColors.purplePrimary,
-                value: context.read<SignupCubit>().checkboxValue,
+                value: !state.isCheckboxChecked,
                 onChanged: (value) {
                   context.read<SignupCubit>().toggleCheckBox();
                 },

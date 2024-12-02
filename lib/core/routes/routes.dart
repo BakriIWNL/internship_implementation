@@ -41,18 +41,13 @@ class Routes {
         ),
       ),
       GoRoute(
-          path: RouteNames.login,
-          builder: (context, state) => const LogInScreen()),
+          path: RouteNames.login, builder: (context, state) => LogInScreen()),
       GoRoute(
           path: RouteNames.signUp,
-          builder: (context, state) => MultiBlocProvider(
-            providers: [
-              BlocProvider(
+          builder: (context, state) => BlocProvider(
                 create: (context) => SignupCubit(),
-              ),
-            ],
-            child: SignUpScreen(),
-          ) ),
+                child: SignUpScreen(),
+              )),
     ],
   );
 }
