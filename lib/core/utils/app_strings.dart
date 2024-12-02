@@ -1,5 +1,6 @@
 class AppStrings {
   static const String appName = "montra";
+  static const String continueText = "Continue";
 
   //Onboarding Strings
   static const String gainTotal = "Gain total control of your money";
@@ -11,8 +12,10 @@ class AppStrings {
 
   //login Strings
   static const String logIn = "Login";
-  static const String forgotPassword = "Forgot Password?";
+  static const String forgotPasswordQ = "Forgot Password?";
   static const String dontHave = "Don’t have an account yet? ";
+  static const String forgotPassword = "Forgot Password";
+  static const String dontWorry = "Don’t worry. \nEnter your email and we’ll send you a link to reset your \npassword.";
 
   //signup Strings
   static const String signUp = "Sign Up";

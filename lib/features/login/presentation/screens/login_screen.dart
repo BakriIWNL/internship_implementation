@@ -6,13 +6,10 @@ import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/components/custom_button.dart';
 import 'package:itcores_internship_project/core/components/customtextfield.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
-import 'package:itcores_internship_project/core/themes/app_assets.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_icons.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
-import 'package:itcores_internship_project/features/login/presentation/cubit/login_cubit.dart';
-import 'package:itcores_internship_project/features/signup/presentation/cubits/signup/signup_cubit.dart';
-import 'package:itcores_internship_project/features/signup/presentation/widgets/checkbox.dart';
+import 'package:itcores_internship_project/features/login/presentation/cubit/login/login_cubit.dart';
 
 class LogInScreen extends StatelessWidget {
   LogInScreen({super.key});
@@ -66,7 +63,7 @@ class LogInScreen extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 16.w),
                     child: NewCustomTextField(
                       hint: AppStrings.email,
-                      controller: context.read<SignupCubit>().nameController,
+                      controller: context.read<LoginCubit>().emailController,
                       validationType: AppStrings.email,
                       height: 56.h,
                       width: 343.w,
@@ -80,7 +77,8 @@ class LogInScreen extends StatelessWidget {
                       builder: (context, state) {
                         return NewCustomTextField(
                           hint: AppStrings.password,
-                          controller: context.read<SignupCubit>().passwordController,
+                          controller:
+                              context.read<LoginCubit>().passwordController,
                           validationType: AppStrings.password,
                           height: 56.h,
                           width: 343.w,
@@ -102,18 +100,31 @@ class LogInScreen extends StatelessWidget {
                                   },
                                   icon: AppIcons.visible,
                                   color: AppColors.greyPrimary),
-                          password: true,
+                          password: state.isPasswordVisible,
                         );
                       },
                     ),
                   ),
+                  40.verticalSpace,
                   CustomButton(
                     text: AppStrings.logIn,
                     onPressed: () => {context.go(RouteNames.signUp)},
                     size: Size(343.w, 56.h),
                   ),
-                  19.verticalSpace,
-                  Text(AppStrings.forgotPassword,style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.w600),),
+                  33.verticalSpace,
+                  InkWell(
+                    onTap: (){
+                      context.go(RouteNames.forgotPassword);
+                    },
+                    child: Text(
+                      AppStrings.forgotPasswordQ,
+                      style: TextStyle(
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.purplePrimary),
+                    ),
+                  ),
+                  38.verticalSpace,
                   RichText(
                     text: TextSpan(
                       text: AppStrings.dontHave,

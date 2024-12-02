@@ -65,7 +65,7 @@ class NewCustomTextField extends StatelessWidget {
             borderSide: const BorderSide(color: AppColors.greyPrimary),
           ),
           hintText: hint,
-          contentPadding: EdgeInsets.only(top: 8.h, left: 8.w),
+          contentPadding: EdgeInsets.only(top: 8.h, left: 15.w),
           suffixIcon: icon ??
               const Icon(Icons.arrow_back_ios, color: Colors.transparent),
           errorStyle: TextStyle(fontSize: 13.sp),
