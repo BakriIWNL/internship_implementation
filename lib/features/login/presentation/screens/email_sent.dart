@@ -3,8 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/components/custom_button.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
+import 'package:itcores_internship_project/core/themes/app_assets.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
-import 'package:itcores_internship_project/core/utils/app_strings.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EmailSent extends StatelessWidget {
   const EmailSent({super.key});
@@ -18,13 +19,13 @@ class EmailSent extends StatelessWidget {
         children: [
           76.verticalSpace,
           Image.asset(
-            'assets/images/emailsent.png',
+            AppAssets.emailSent,
             height: 312.h,
             width: 312.w,
           ),
           18.verticalSpace,
           Text(
-            AppStrings.emailOnTheWay,
+            AppLocalizations.of(context)!.emailOnTheWay,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 24.sp,
@@ -33,7 +34,7 @@ class EmailSent extends StatelessWidget {
           ),
           24.verticalSpace,
           Text(
-            AppStrings.checkEmail,
+            AppLocalizations.of(context)!.checkEmail,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 16.sp,
@@ -42,7 +43,7 @@ class EmailSent extends StatelessWidget {
           ),
           190.verticalSpace,
           CustomButton(
-              text: AppStrings.backToLogin,
+              text: AppLocalizations.of(context)!.backToLogin,
               onPressed: () {
                 context.go(RouteNames.login);
               },

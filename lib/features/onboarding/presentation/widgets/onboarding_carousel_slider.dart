@@ -21,7 +21,7 @@ class OnboardingCarousel extends StatelessWidget {
                       currentPage: value,
                     ),
             children: List.generate(
-              OnBoardingInfo.onBoardingInfoList.length,
+              OnBoardingInfo.getOnBoardingInfoList(context).length,
               (index) {
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -30,11 +30,11 @@ class OnboardingCarousel extends StatelessWidget {
                       width: 312.w,
                       height: 312.h,
                       OnBoardingInfo
-                          .onBoardingInfoList[state.currentPage].imagePath,
+                          .getOnBoardingInfoList(context)[state.currentPage].imagePath,
                     ),
                     Text(
                       OnBoardingInfo
-                          .onBoardingInfoList[state.currentPage].title,
+                          .getOnBoardingInfoList(context)[state.currentPage].title,
                       style: TextStyle(
                           color: AppColors.blackText,
                           fontSize: 32.sp,
@@ -44,7 +44,7 @@ class OnboardingCarousel extends StatelessWidget {
                     17.verticalSpace,
                     Text(
                       OnBoardingInfo
-                          .onBoardingInfoList[state.currentPage].subTitle,
+                          .getOnBoardingInfoList(context)[state.currentPage].subTitle,
                       style: TextStyle(
                           color: AppColors.greyText,
                           fontSize: 16.sp,

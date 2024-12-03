@@ -4,9 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_icons.dart';
-import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/features/login/presentation/widgets/login_actions.dart';
 import 'package:itcores_internship_project/features/login/presentation/widgets/login_form.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LogInScreen extends StatelessWidget {
   LogInScreen({super.key});
@@ -39,7 +39,7 @@ class LogInScreen extends StatelessWidget {
           title: Padding(
             padding: EdgeInsets.only(top: 25.h),
             child: Text(
-              AppStrings.logIn,
+              AppLocalizations.of(context)!.logIn,
               style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600,

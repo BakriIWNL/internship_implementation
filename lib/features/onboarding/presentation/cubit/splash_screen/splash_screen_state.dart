@@ -1,13 +1,13 @@
 part of 'splash_screen_cubit.dart';
 
 class SplashScreenState extends Equatable{
-  SplashScreenState({
+  const SplashScreenState({
     required this.state,
   });
   final SplashStates state;
 
   factory SplashScreenState.active() {
-    return SplashScreenState(
+    return const SplashScreenState(
       state: SplashStates.active,
     );
   }

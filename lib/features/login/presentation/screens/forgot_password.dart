@@ -7,8 +7,8 @@ import 'package:itcores_internship_project/core/components/customtextfield.dart'
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_icons.dart';
-import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/features/login/presentation/cubit/forgot_password/forgotpassword_cubit.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   ForgotPasswordScreen({super.key});
@@ -41,7 +41,7 @@ class ForgotPasswordScreen extends StatelessWidget {
           title: Padding(
             padding: EdgeInsets.only(top: 25.h),
             child: Text(
-              AppStrings.forgotPassword,
+              AppLocalizations.of(context)!.forgotPassword,
               style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600,
@@ -62,7 +62,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                       width: 343.w,
                       height: 150.h,
                       child: Text(
-                        AppStrings.dontWorry,
+                        AppLocalizations.of(context)!.dontWorry,
                         style: TextStyle(
                             color: AppColors.black,
                             fontSize: 24.sp,
@@ -73,10 +73,10 @@ class ForgotPasswordScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.w),
                     child: NewCustomTextField(
-                      hint: AppStrings.email,
+                      hint: AppLocalizations.of(context)!.email,
                       controller:
                           context.read<ForgotpasswordCubit>().emailController,
-                      validationType: AppStrings.email,
+                      validationType: AppLocalizations.of(context)!.email,
                       height: 56.h,
                       width: 343.w,
                       password: false,
@@ -84,7 +84,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   ),
                   40.verticalSpace,
                   CustomButton(
-                    text: AppStrings.continueText,
+                    text: AppLocalizations.of(context)!.continueText,
                     onPressed: () => {context.go(RouteNames.emailSent)},
                     size: Size(343.w, 56.h),
                   ),

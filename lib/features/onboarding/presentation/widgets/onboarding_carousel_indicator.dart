@@ -17,7 +17,7 @@ class OnboardingCarouselIndicator extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: List.generate(
-              OnBoardingInfo.onBoardingInfoList.length,
+              OnBoardingInfo.getOnBoardingInfoList(context).length,
               (index) {
                 return GestureDetector(
                   onTap: () => context.read<CarouselCubit>().onPageChanged(

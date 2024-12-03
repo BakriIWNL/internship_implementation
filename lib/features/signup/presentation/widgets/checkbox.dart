@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
-import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/features/signup/presentation/cubits/signup/signup_cubit.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CheckBox extends StatelessWidget {
   const CheckBox({super.key});
@@ -33,7 +33,7 @@ class CheckBox extends StatelessWidget {
               Expanded(
                 child: RichText(
                   text: TextSpan(
-                      text: AppStrings.signUpAgree,
+                      text: AppLocalizations.of(context)!.signUpAgree,
                       style: TextStyle(
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
@@ -41,11 +41,11 @@ class CheckBox extends StatelessWidget {
                       ),
                       children: [
                         TextSpan(
-                          text: AppStrings.termsAndConditions,
+                          text: AppLocalizations.of(context)!.termsAndConditions,
                           recognizer: TapGestureRecognizer()
                             ..onTap = () async {
                               Uri url =
-                                  AppStrings.termsAndConditionsLink as Uri;
+                                  AppLocalizations.of(context)!.termsAndConditionsLink as Uri;
                               if (!await launchUrl(
                                 url,
                                 mode: LaunchMode.externalApplication,

@@ -6,6 +6,7 @@ import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_icons.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/features/login/presentation/cubit/login/login_cubit.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -18,7 +19,7 @@ class LoginForm extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: NewCustomTextField(
-            hint: AppStrings.email,
+            hint: AppLocalizations.of(context)!.email,
             controller: context.read<LoginCubit>().emailController,
             validationType: AppStrings.email,
             height: 56.h,
@@ -32,7 +33,7 @@ class LoginForm extends StatelessWidget {
           child: BlocBuilder<LoginCubit, LoginState>(
             builder: (context, state) {
               return NewCustomTextField(
-                hint: AppStrings.password,
+                hint: AppLocalizations.of(context)!.password,
                 controller: context.read<LoginCubit>().passwordController,
                 validationType: AppStrings.password,
                 height: 56.h,
