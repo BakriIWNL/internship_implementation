@@ -1,17 +1,17 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:itcores_internship_project/core/components/custom_button.dart';
+import 'package:itcores_internship_project/core/components/customtextfield.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_icons.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
-import 'package:itcores_internship_project/features/signup/presentation/widgets/checkbox.dart';
-import 'package:itcores_internship_project/features/signup/presentation/widgets/signup_buttons.dart';
-import 'package:itcores_internship_project/features/signup/presentation/widgets/signup_text_fields.dart';
+import 'package:itcores_internship_project/features/login/presentation/cubit/forgot_password/forgotpassword_cubit.dart';
 
-class SignUpScreen extends StatelessWidget {
-  SignUpScreen({super.key});
+class ForgotPasswordScreen extends StatelessWidget {
+  ForgotPasswordScreen({super.key});
 
   final _formkey = GlobalKey<FormState>();
 
@@ -33,7 +33,7 @@ class SignUpScreen extends StatelessWidget {
             child: IconButton(
               icon: AppIcons.arrowBack,
               onPressed: () {
-                context.go(RouteNames.onboarding);
+                context.go(RouteNames.login);
               },
             ),
           ),
@@ -41,7 +41,7 @@ class SignUpScreen extends StatelessWidget {
           title: Padding(
             padding: EdgeInsets.only(top: 25.h),
             child: Text(
-              AppStrings.signUp,
+              AppStrings.forgotPassword,
               style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600,
@@ -58,35 +58,37 @@ class SignUpScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   56.verticalSpace,
-                  const SignupTextFields(),
-                  const CheckBox(),
-                  const SignUpButtons(),
-                  19.verticalSpace,
-                  RichText(
-                    text: TextSpan(
-                      text: AppStrings.alreadyHaveAccount,
-                      style: TextStyle(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.greyText,
-                      ),
-                      children: [
-                        TextSpan(
-                          text: AppStrings.logIn,
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.purplePrimary,
-                            decoration: TextDecoration.underline,
-                          ),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              context.go(RouteNames.login);
-                            },
-                        ),
-                      ],
+                  SizedBox(
+                      width: 343.w,
+                      height: 150.h,
+                      child: Text(
+                        AppStrings.dontWorry,
+                        style: TextStyle(
+                            color: AppColors.black,
+                            fontSize: 24.sp,
+                            fontWeight: FontWeight.w600),
+                            maxLines: 5,
+                      )),
+                  46.verticalSpace,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: NewCustomTextField(
+                      hint: AppStrings.email,
+                      controller:
+                          context.read<ForgotpasswordCubit>().emailController,
+                      validationType: AppStrings.email,
+                      height: 56.h,
+                      width: 343.w,
+                      password: false,
                     ),
-                  )
+                  ),
+                  40.verticalSpace,
+                  CustomButton(
+                    text: AppStrings.continueText,
+                    onPressed: () => {context.go(RouteNames.emailSent)},
+                    size: Size(343.w, 56.h),
+                  ),
+                  33.verticalSpace,
                 ],
               ),
             )),

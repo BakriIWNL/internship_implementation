@@ -33,8 +33,8 @@ class OnboardingCarouselIndicator extends StatelessWidget {
                       color: state.currentPage == index
                           ? AppColors.purplePrimary
                           : AppColors.purpleSecondary,
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(10),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.r),
                       ),
                     ),
                   ),

@@ -1,5 +1,6 @@
 class AppStrings {
   static const String appName = "montra";
+  static const String continueText = "Continue";
 
   //Onboarding Strings
   static const String gainTotal = "Gain total control of your money";
@@ -11,8 +12,23 @@ class AppStrings {
 
   //login Strings
   static const String logIn = "Login";
+  static const String forgotPasswordQ = "Forgot Password?";
+  static const String dontHave = "Don’t have an account yet? ";
+  static const String forgotPassword = "Forgot Password";
+  static const String dontWorry = "Don’t worry. \nEnter your email and we’ll send you a link to reset your \npassword.";
+  static const String emailOnTheWay = "Your email is on the way!";
+  static const String checkEmail = "We have sent an email to your email address. Please check your email to reset your password.";
+  static const String backToLogin = "Back to Login";
 
   //signup Strings
   static const String signUp = "Sign Up";
-
+  static const String email = "Email";
+  static const String password = "Password";
+  static const String name = "Name";
+  static const String signUpAgree = "By signing up, you agree to the ";
+  static const String termsAndConditions = "Terms of Service and Privacy Policy";
+  static const String termsAndConditionsLink = "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service";
+  static const String alreadyHaveAccount = "Already have an account? ";
+  static const String orWith = "Or sign up with";
+  static const String googleSignUp = "Sign up with Google";
 }
