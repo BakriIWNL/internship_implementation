@@ -25,5 +25,6 @@
   "termsAndConditionsLink": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
   "alreadyHaveAccount": "Already have an account?",
   "orWith": "Or sign up with",
-  "googleSignUp": "Sign up with Google"
+  "googleSignUp": "Sign up with Google",
+  "setupPin": "Let's setup your PIN"
 }

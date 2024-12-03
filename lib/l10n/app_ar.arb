@@ -25,5 +25,6 @@
     "termsAndConditionsLink": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
     "alreadyHaveAccount": "هل لديك حساب بالفعل؟",
     "orWith": "أو التسجيل باستخدام",
-    "googleSignUp": "التسجيل باستخدام جوجل"
+    "googleSignUp": "التسجيل باستخدام جوجل",
+    "setupPin": "دعنا نقوم بإعداد رقمك السري"
   }

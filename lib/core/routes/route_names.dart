@@ -5,4 +5,5 @@ class RouteNames {
   static const String onboarding = '/onboarding';
   static const String forgotPassword = '/forgotpassword';
   static const String emailSent = '/emailsent';
+  static const String enterPin = '/enterpin';
 }

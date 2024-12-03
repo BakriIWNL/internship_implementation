@@ -13,12 +13,14 @@ class SignupCubit extends Cubit<SignupState> {
   TextEditingController emailController = TextEditingController();
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController pinController = TextEditingController();
 
   @override
   Future<void> close(){
     emailController.dispose();
     nameController.dispose();
     passwordController.dispose();
+    pinController.dispose();
     return super.close();
   }
 
@@ -34,5 +36,9 @@ class SignupCubit extends Cubit<SignupState> {
     emit(state.copyWith(isCheckboxChecked: checkboxValue));
   }
 
+  void onPinEntered(String pin) {
+    pinController.text += pin;
+    debugPrint('Pin entered: $pinController.text');
+  }
 
 }
