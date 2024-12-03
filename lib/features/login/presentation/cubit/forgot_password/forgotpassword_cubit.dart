@@ -8,4 +8,10 @@ class ForgotpasswordCubit extends Cubit<ForgotpasswordState> {
   ForgotpasswordCubit() : super(ForgotpasswordState.initial());
 
   TextEditingController emailController = TextEditingController();
+  @override
+  Future<void> close(){
+    
+    emailController.dispose();
+    return super.close();
+  }
 }

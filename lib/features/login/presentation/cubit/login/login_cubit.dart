@@ -11,7 +11,12 @@ class LoginCubit extends Cubit<LoginState> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-
+  @override
+  Future<void> close(){
+    emailController.dispose();
+    passwordController.dispose();
+    return super.close();
+  }
 
   void togglePasswordVisibility() {
     passwordVisible = !passwordVisible;
