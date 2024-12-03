@@ -1,10 +1,12 @@
 part of 'login_cubit.dart';
 
-class LoginState {
+class LoginState extends Equatable{
   final GenericStates state;
   final bool isPasswordVisible;
+
   const LoginState({
-    required this.state,this.isPasswordVisible = false,
+    required this.state,
+    this.isPasswordVisible = false,
   });
 
   factory LoginState.initial() {
@@ -16,11 +18,14 @@ class LoginState {
 
   LoginState copyWith({
     GenericStates? state,
-    bool? isPasswordVisible
+    bool? isPasswordVisible,
   }) {
     return LoginState(
       state: state ?? this.state,
-      isPasswordVisible: isPasswordVisible ?? this.isPasswordVisible
+      isPasswordVisible: isPasswordVisible ?? this.isPasswordVisible,
     );
   }
+
+  @override
+  List<Object?> get props => [state, isPasswordVisible];
 }

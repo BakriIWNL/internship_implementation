@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/features/login/presentation/cubit/forgot_password/forgotpassword_cubit.dart';
 import 'package:itcores_internship_project/features/login/presentation/cubit/login/login_cubit.dart';
+import 'package:itcores_internship_project/features/login/presentation/screens/email_sent.dart';
 import 'package:itcores_internship_project/features/login/presentation/screens/forgot_password.dart';
 import 'package:itcores_internship_project/features/login/presentation/screens/login_screen.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/cubit/carousel/carousel_cubit.dart';
@@ -61,6 +62,9 @@ class Routes {
                 create: (context) => ForgotpasswordCubit(),
                 child: ForgotPasswordScreen(),
               )),
+      GoRoute(
+          path: RouteNames.emailSent,
+          builder: (context, state) => const EmailSent()),
     ],
   );
 }

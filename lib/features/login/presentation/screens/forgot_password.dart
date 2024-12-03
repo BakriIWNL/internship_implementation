@@ -85,7 +85,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   40.verticalSpace,
                   CustomButton(
                     text: AppStrings.continueText,
-                    onPressed: () => {context.go(RouteNames.login)},
+                    onPressed: () => {context.go(RouteNames.emailSent)},
                     size: Size(343.w, 56.h),
                   ),
                   33.verticalSpace,

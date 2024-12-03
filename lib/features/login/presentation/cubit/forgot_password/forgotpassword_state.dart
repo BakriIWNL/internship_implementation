@@ -1,6 +1,6 @@
 part of 'forgotpassword_cubit.dart';
 
-class ForgotpasswordState {
+class ForgotpasswordState extends Equatable{
   final GenericStates state;
   const ForgotpasswordState({
     required this.state,
@@ -19,4 +19,7 @@ class ForgotpasswordState {
       state: state ?? this.state,
     );
   }
+  
+  @override
+  List<Object?> get props => [state];
 }

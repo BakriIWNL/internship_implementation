@@ -1,6 +1,6 @@
 part of 'signup_cubit.dart';
 
-class SignupState {
+class SignupState extends Equatable{
   final GenericStates state;
   final bool isPasswordVisible;
   final bool isCheckboxChecked;
@@ -30,4 +30,7 @@ class SignupState {
       isCheckboxChecked: isCheckboxChecked ?? this.isCheckboxChecked,
     );
   }
+  
+  @override
+  List<Object?> get props => [state, isPasswordVisible, isCheckboxChecked];
 }

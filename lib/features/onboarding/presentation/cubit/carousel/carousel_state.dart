@@ -1,7 +1,7 @@
 part of 'carousel_cubit.dart';
 
 
-class CarouselState {
+class CarouselState extends Equatable{
   const CarouselState({
     required this.currentPage,
     required this.state,
@@ -26,4 +26,7 @@ class CarouselState {
       state: state ?? this.state,
     );
   }
+  
+  @override
+  List<Object?> get props => [currentPage, state];
 }

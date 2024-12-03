@@ -16,6 +16,9 @@ class AppStrings {
   static const String dontHave = "Don’t have an account yet? ";
   static const String forgotPassword = "Forgot Password";
   static const String dontWorry = "Don’t worry. \nEnter your email and we’ll send you a link to reset your \npassword.";
+  static const String emailOnTheWay = "Your email is on the way!";
+  static const String checkEmail = "We have sent an email to your email address. Please check your email to reset your password.";
+  static const String backToLogin = "Back to Login";
 
   //signup Strings
   static const String signUp = "Sign Up";
