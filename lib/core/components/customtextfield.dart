@@ -30,7 +30,7 @@ class NewCustomTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.r),
       ),
       child: TextFormField(
-        obscureText: (password) ? false : true,
+        obscureText: password,
         autocorrect: false,
         controller: controller,
         cursorColor: AppColors.greyPrimary,
