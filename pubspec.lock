@@ -546,6 +546,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.0"
+  pin_dot:
+    dependency: "direct main"
+    description:
+      name: pin_dot
+      sha256: ee6737c54f988164e2a11f2be7885cf162e474f8ef4f7b25d142555533a59270
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.4"
   platform:
     dependency: transitive
     description:

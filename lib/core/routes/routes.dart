@@ -11,8 +11,10 @@ import 'package:itcores_internship_project/features/onboarding/presentation/cubi
 import 'package:itcores_internship_project/features/onboarding/presentation/cubit/splash_screen/splash_screen_cubit.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/screens/splash_screen.dart';
+import 'package:itcores_internship_project/features/setup/presentation/cubit/setup_cubit.dart';
+import 'package:itcores_internship_project/features/setup/presentation/screens/lets_setup.dart';
 import 'package:itcores_internship_project/features/signup/presentation/cubits/signup/signup_cubit.dart';
-import 'package:itcores_internship_project/features/signup/presentation/screens/enter_pin_screen.dart';
+import 'package:itcores_internship_project/features/setup/presentation/screens/enter_pin_screen.dart';
 import 'package:itcores_internship_project/features/signup/presentation/screens/signup_screen.dart';
 
 class Routes {
@@ -24,6 +26,7 @@ class Routes {
                 create: (context) => SplashScreenCubit(),
                 child: const SplashScreen(),
               )),
+
       GoRoute(
         path: RouteNames.onboarding,
         pageBuilder: (context, state) => CustomTransitionPage(
@@ -45,33 +48,46 @@ class Routes {
           },
         ),
       ),
+
       GoRoute(
           path: RouteNames.login,
           builder: (context, state) => BlocProvider(
                 create: (context) => LoginCubit(),
                 child: LogInScreen(),
               )),
+              
       GoRoute(
           path: RouteNames.signUp,
           builder: (context, state) => BlocProvider(
                 create: (context) => SignupCubit(),
                 child: SignUpScreen(),
               )),
+
       GoRoute(
           path: RouteNames.forgotPassword,
           builder: (context, state) => BlocProvider(
                 create: (context) => ForgotpasswordCubit(),
                 child: ForgotPasswordScreen(),
               )),
+
       GoRoute(
           path: RouteNames.emailSent,
           builder: (context, state) => const EmailSent()),
+
       GoRoute(
           path: RouteNames.enterPin,
           builder: (context, state) => BlocProvider(
-                create: (context) => SignupCubit(),
+                create: (context) => SetupCubit(),
                 child: const EnterPinScreen(),
               )),
+
+      GoRoute(
+          path: RouteNames.LetsSetup,
+          builder: (context, state) => BlocProvider(
+                create: (context) => SetupCubit(),
+                child: const LetsSetup(),
+              )),
+              
     ],
   );
 }

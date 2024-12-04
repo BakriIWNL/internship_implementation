@@ -3,8 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
-import 'package:itcores_internship_project/features/signup/presentation/cubits/signup/signup_cubit.dart';
-import 'package:itcores_internship_project/features/signup/presentation/widgets/pin_numpad.dart';
+import 'package:itcores_internship_project/features/setup/presentation/cubit/setup_cubit.dart';
+import 'package:itcores_internship_project/features/setup/presentation/widgets/pin_dots.dart';
+import 'package:itcores_internship_project/features/setup/presentation/widgets/pin_numpad.dart';
 
 class EnterPinScreen extends StatelessWidget {
   const EnterPinScreen({super.key});
@@ -25,12 +26,17 @@ class EnterPinScreen extends StatelessWidget {
                   color: AppColors.white,
                   fontWeight: FontWeight.w600),
             ),
-            (MediaQuery.of(context).size.height * 0.45).verticalSpace,
-            BlocBuilder<SignupCubit, SignupState>(
-              builder: (context, state) {
-                return const PinNumpad();
-              },
+            92.verticalSpace,
+            Padding(
+              padding: EdgeInsets.only(left: 85.w),
+              child: BlocBuilder<SetupCubit, SetupState>(
+                builder: (context, state) {
+                  return const PinDots();
+                },
+              ),
             ),
+            216.verticalSpace,
+            const PinNumpad(),
           ],
         ),
       ),
