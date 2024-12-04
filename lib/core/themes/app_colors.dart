@@ -19,4 +19,5 @@ class AppColors {
   static const bluePrimary = Color(0xFF0077FF);
   static const blueSecondary = Color(0xFFBDDCFF);
   static const blur = Color(0xFFdb4dff);
+  static const border = Color(0XFFF1F1FA);
 }

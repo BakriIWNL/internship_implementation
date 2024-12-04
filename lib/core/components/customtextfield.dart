@@ -42,7 +42,7 @@ class NewCustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.r),
-            borderSide: const BorderSide(color: AppColors.greyPrimary),
+            borderSide: const BorderSide(color: AppColors.border),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.r),
@@ -62,7 +62,7 @@ class NewCustomTextField extends StatelessWidget {
               fontWeight: FontWeight.w400),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.r),
-            borderSide: const BorderSide(color: AppColors.greyPrimary),
+            borderSide: const BorderSide(color: AppColors.border),
           ),
           hintText: hint,
           contentPadding: EdgeInsets.only(top: 8.h, left: 15.w,right: 15.w),

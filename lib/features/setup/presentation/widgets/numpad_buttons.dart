@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
-import 'package:itcores_internship_project/features/setup/presentation/cubit/setup_cubit.dart';
+import 'package:itcores_internship_project/features/setup/presentation/cubit/setup/setup_cubit.dart';
 class NumpadButton extends StatelessWidget {
   final int number;
   final TextEditingController controller;
