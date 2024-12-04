@@ -6,6 +6,7 @@ import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_icons.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/features/signup/presentation/cubits/signup/signup_cubit.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SignupTextFields extends StatelessWidget {
   const SignupTextFields({super.key});
@@ -17,7 +18,7 @@ class SignupTextFields extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: NewCustomTextField(
-            hint: AppStrings.name,
+            hint: AppLocalizations.of(context)!.name,
             controller: context.read<SignupCubit>().nameController,
             validationType: AppStrings.name,
             height: 56.h,
@@ -29,7 +30,7 @@ class SignupTextFields extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: NewCustomTextField(
-            hint: AppStrings.email,
+            hint: AppLocalizations.of(context)!.email,
             controller: context.read<SignupCubit>().emailController,
             validationType: AppStrings.email,
             height: 56.h,
@@ -43,7 +44,7 @@ class SignupTextFields extends StatelessWidget {
           child: BlocBuilder<SignupCubit, SignupState>(
             builder: (context, state) {
               return NewCustomTextField(
-                hint: AppStrings.password,
+                hint: AppLocalizations.of(context)!.password,
                 controller: context.read<SignupCubit>().passwordController,
                 validationType: AppStrings.password,
                 height: 56.h,

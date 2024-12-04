@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/utils/app_colors.dart';
-import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/core/utils/enums.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/cubit/splash_screen/splash_screen_cubit.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -43,7 +43,7 @@ class SplashScreen extends StatelessWidget {
                 ),
               )),
           Center(
-            child: Text(AppStrings.appName,
+            child: Text(AppLocalizations.of(context)!.appName,
                 style: TextStyle(
                   fontSize: 56.sp,
                   fontWeight: FontWeight.w700,

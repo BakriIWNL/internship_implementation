@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/components/custom_button.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
-import 'package:itcores_internship_project/core/utils/app_strings.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginActions extends StatelessWidget {
   const LoginActions({super.key});
@@ -15,7 +15,7 @@ class LoginActions extends StatelessWidget {
     return Column(
       children: [
         CustomButton(
-          text: AppStrings.logIn,
+          text: AppLocalizations.of(context)!.logIn,
           onPressed: () => {context.go(RouteNames.signUp)},
           size: Size(343.w, 56.h),
         ),
@@ -25,7 +25,7 @@ class LoginActions extends StatelessWidget {
             context.go(RouteNames.forgotPassword);
           },
           child: Text(
-            AppStrings.forgotPasswordQ,
+            AppLocalizations.of(context)!.forgotPasswordQ,
             style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600,
@@ -35,7 +35,7 @@ class LoginActions extends StatelessWidget {
         38.verticalSpace,
         RichText(
           text: TextSpan(
-            text: AppStrings.dontHave,
+            text: AppLocalizations.of(context)!.dontHave,
             style: TextStyle(
               fontSize: 16.sp,
               fontWeight: FontWeight.w500,
@@ -43,7 +43,7 @@ class LoginActions extends StatelessWidget {
             ),
             children: [
               TextSpan(
-                text: AppStrings.signUp,
+                text: AppLocalizations.of(context)!.signUp,
                 style: TextStyle(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w500,

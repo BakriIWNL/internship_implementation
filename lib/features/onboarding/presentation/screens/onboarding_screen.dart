@@ -5,10 +5,10 @@ import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/components/custom_button.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
-import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/cubit/carousel/carousel_cubit.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/widgets/onboarding_carousel_indicator.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/widgets/onboarding_carousel_slider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -24,12 +24,12 @@ class OnboardingScreen extends StatelessWidget {
                 const OnboardingCarousel(),
                 const OnboardingCarouselIndicator(),
                 CustomButton(
-                    text: AppStrings.signUp,
+                    text: AppLocalizations.of(context)!.signUp,
                     onPressed: () => context.go(RouteNames.signUp),
                     size: Size(343.w, 56.h)),
                 16.verticalSpace,
                 CustomButton(
-                  text: AppStrings.logIn,
+                  text: AppLocalizations.of(context)!.logIn,
                   onPressed: () => context.go(RouteNames.login),
                   size: Size(343.w, 56.h),
                   textColor: AppColors.purplePrimary,

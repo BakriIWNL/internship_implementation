@@ -5,7 +5,7 @@ import 'package:itcores_internship_project/core/components/custom_button.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_assets.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
-import 'package:itcores_internship_project/core/utils/app_strings.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SignUpButtons extends StatelessWidget {
   const SignUpButtons({super.key});
@@ -16,11 +16,11 @@ class SignUpButtons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         CustomButton(
-            text: AppStrings.signUp,
+            text: AppLocalizations.of(context)!.signUp,
             onPressed: () => {context.go(RouteNames.signUp)},
             size: Size(343.w, 56.h)),
         12.verticalSpace,
-        Text(AppStrings.orWith,
+        Text(AppLocalizations.of(context)!.orWith,
             style: TextStyle(
               fontSize: 14.sp,
               fontWeight: FontWeight.w700,
@@ -48,7 +48,7 @@ class SignUpButtons extends StatelessWidget {
                 width: 35.w,
               ),
               10.horizontalSpace,
-              Text(AppStrings.googleSignUp,
+              Text(AppLocalizations.of(context)!.googleSignUp,
                   style: TextStyle(
                       color: AppColors.blackText,
                       fontSize: 18.sp,
