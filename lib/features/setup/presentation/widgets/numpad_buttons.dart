@@ -13,9 +13,8 @@ class NumpadButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        if(!context.read<SetupCubit>().checkComplete(controller.text.length)){
-          controller.text += number.toString();
-        }
+        context.read<SetupCubit>().addPin(number);
+        debugPrint(controller.text);
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.purplePrimary,

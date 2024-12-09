@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomPinDot extends StatefulWidget {
+class CustomPinDot extends StatelessWidget {
   final double size;
   final int length;
   final double padding;
@@ -20,44 +20,27 @@ class CustomPinDot extends StatefulWidget {
     this.padding = 10,
     this.controller,
   });
-
-  @override
-  _PinDotState createState() => _PinDotState();
-}
-
-class _PinDotState extends State<CustomPinDot> {
-  String _text = '';
-
-  @override
-  void initState() {
-    widget.controller?.addListener(() {
-      setState(() {
-        _text = widget.controller?.text ?? '';
-      });
-    });
-    super.initState();
-  }
-
+  
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: widget.size + (widget.padding * 2),
+      height: size + (padding * 2),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         
-        itemCount: widget.length,
+        itemCount: length,
         itemBuilder: (context, index) {
           return _PinDotItemWidget(
             index: index,
-            size: widget.size,
-            length: widget.length,
-            padding: widget.padding,
-            activeColor: widget.activeColor,
-            inactiveColor: widget.inactiveColor,
-            borderColor: widget.borderColor,
-            text: _text,
+            size: size,
+            length: length,
+            padding: padding,
+            activeColor: activeColor,
+            inactiveColor: inactiveColor,
+            borderColor: borderColor,
+            text: controller!.text,
           );
         },
       ),

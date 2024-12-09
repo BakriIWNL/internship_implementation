@@ -1,24 +1,24 @@
 part of 'setup_cubit.dart';
 
 class SetupState extends Equatable {
-  final String pin;
+  final GenericStates states;
 
-  const SetupState({required this.pin});
+  const SetupState({required this.states});
 
   factory SetupState.initial() {
     return const SetupState(
-      pin: ''
+      states: GenericStates.initial
     );
   }
 
   SetupState copyWith({
-    String? pin
+    GenericStates? states
   }) {
     return SetupState(
-      pin: pin ?? this.pin
+      states: states ?? this.states
     );
   }
 
   @override
-  List<Object> get props => [pin];
+  List<Object> get props => [states];
 }

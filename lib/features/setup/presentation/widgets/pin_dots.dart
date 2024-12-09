@@ -13,13 +13,17 @@ class PinDots extends StatelessWidget {
     return SizedBox(
       height: 50.h,
       width: double.infinity,
-      child: CustomPinDot(
-        size: 32.r,
-        length: 4,
-        activeColor: AppColors.white,
-        borderColor: AppColors.purpleTertiary,
-        inactiveColor: AppColors.purplePrimary,
-        controller: context.read<SetupCubit>().pinController,
+      child: BlocBuilder<SetupCubit, SetupState>(
+        builder: (context, state) {
+          return CustomPinDot(
+            size: 32.r,
+            length: 4,
+            activeColor: AppColors.white,
+            borderColor: AppColors.purpleTertiary,
+            inactiveColor: AppColors.purplePrimary,
+            controller: context.read<SetupCubit>().pinController,
+          );
+        },
       ),
     );
   }

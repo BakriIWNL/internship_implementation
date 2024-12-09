@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
-import 'package:itcores_internship_project/features/setup/presentation/cubit/setup/setup_cubit.dart';
 import 'package:itcores_internship_project/features/setup/presentation/widgets/pin_dots.dart';
 import 'package:itcores_internship_project/features/setup/presentation/widgets/pin_numpad.dart';
 
@@ -29,11 +27,7 @@ class EnterPinScreen extends StatelessWidget {
             92.verticalSpace,
             Padding(
               padding: EdgeInsets.only(left: 85.w),
-              child: BlocBuilder<SetupCubit, SetupState>(
-                builder: (context, state) {
-                  return const PinDots();
-                },
-              ),
+              child: const PinDots(),
             ),
             216.verticalSpace,
             const PinNumpad(),

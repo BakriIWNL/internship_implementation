@@ -27,10 +27,7 @@ class PinNumpad extends StatelessWidget {
                 child: IconButton(
                   icon: Icon(Icons.arrow_back,color: AppColors.white,size: 50.sp,),
                   onPressed: () {
-                    var pinController = context.read<SetupCubit>().pinController;
-                    if (pinController.text.isNotEmpty) {
-                      pinController.text = pinController.text.substring(0, pinController.text.length - 1);
-                    }
+                    return context.read<SetupCubit>().removedPin();
                   },
                 ),
               );
