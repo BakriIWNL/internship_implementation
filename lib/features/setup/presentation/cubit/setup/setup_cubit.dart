@@ -10,7 +10,6 @@ class SetupCubit extends Cubit<SetupState> {
 
   TextEditingController pinController = TextEditingController();
 
-
   @override
   Future<void> close() {
     pinController.dispose();

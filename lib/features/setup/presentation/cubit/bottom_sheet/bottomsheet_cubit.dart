@@ -11,6 +11,8 @@ class BottomsheetCubit extends Cubit<BottomsheetState> {
 
   TextEditingController nameController = TextEditingController();
   String value = '1';
+  int? index;
+  bool seeOther = false;
 
   @override
   Future<void> close() {
@@ -31,4 +33,14 @@ class BottomsheetCubit extends Cubit<BottomsheetState> {
     }
   }
 
+  void updateSelected(int index){
+    if(!seeOther && index == 7){
+      seeOther = true;
+      this.index = null;
+      emit(state.copyWith(state: BottomSheetStates.bank, height: 451,index: index));
+    }else{
+      this.index = index;
+      emit(state.copyWith(state: BottomSheetStates.bank, height: 451,index: index));
+    }
+  }
 }

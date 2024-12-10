@@ -3,24 +3,24 @@ part of 'bottomsheet_cubit.dart';
 class BottomsheetState extends Equatable {
   final BottomSheetStates state;
   final double height;
-  final int oldHeight;
-  const BottomsheetState({required this.state,required this.height, required this.oldHeight});
+  final int? index;
+  const BottomsheetState({required this.state,required this.height, this.index});
 
   factory BottomsheetState.initial() {
     return const BottomsheetState(
-      state: BottomSheetStates.initial, height: 254,oldHeight:254
+      state: BottomSheetStates.initial, height: 254,index:null
     );
   }
 
   BottomsheetState copyWith({
     BottomSheetStates? state,
-    double ? height
+    double ? height, int? index
   }) {
     return BottomsheetState(
-      state: state ?? this.state, height: height ?? this.height, oldHeight: oldHeight
+      state: state ?? this.state, height: height ?? this.height, index:index ?? this.index
     );
   }
 
   @override
-  List<Object> get props => [state,height,oldHeight];
+  List<Object?> get props => [state, height, index];
 }

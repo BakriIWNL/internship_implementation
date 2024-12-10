@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:itcores_internship_project/core/components/custom_button.dart';
 import 'package:itcores_internship_project/core/components/custom_dropdown.dart';
 import 'package:itcores_internship_project/core/components/customtextfield.dart';
+import 'package:itcores_internship_project/core/themes/app_assets.dart';
 import 'package:itcores_internship_project/core/utils/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:itcores_internship_project/features/setup/presentation/cubit/bottom_sheet/bottomsheet_cubit.dart';
 
 class BankBottomsheet extends StatelessWidget {
   final Function onChanged;
@@ -23,6 +26,21 @@ class BankBottomsheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> images = [
+      AppAssets.chase,
+      AppAssets.paypal,
+      AppAssets.citi,
+      AppAssets.bankOfAmerica,
+      AppAssets.jago,
+      AppAssets.mandiri,
+      AppAssets.bca,
+      AppAssets.chase,
+      AppAssets.paypal,
+      AppAssets.citi,
+      AppAssets.bankOfAmerica,
+      AppAssets.jago,
+    ];
+
     return BottomSheet(
       enableDrag: false,
       builder: (BuildContext context) {
@@ -64,40 +82,93 @@ class BankBottomsheet extends StatelessWidget {
                       },
                       value: value,
                     ),
-                    20.verticalSpace,
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: 20.h, bottom: 20.0.h, left: 21.w),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          AppLocalizations.of(context)!.bank,
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.blackText,
+                          ),
+                        ),
+                      ),
+                    ),
                     SizedBox(
-                      height: 200.h,
+                      height: 150.h,
+                      width: 344.w,
                       child: GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
+                          crossAxisCount: 4,
                           crossAxisSpacing: 10.w,
                           mainAxisSpacing: 10.h,
+                          childAspectRatio: 1.5,
                         ),
-                        itemCount: 6,
+                        itemCount: (context.read<BottomsheetCubit>().seeOther)
+                            ? 12
+                            : 8,
                         itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            height: 10.h,
-                            width: 80.w,
-                            decoration: BoxDecoration(
-                              color: AppColors.greyText,
-                              borderRadius: BorderRadius.circular(8.r),
-                            ),
-                            child: Center(
-                              child: SizedBox(
-                                child: Text(
-                                  'Item $index',
-                                  style: TextStyle(
-                                    color: AppColors.black,
-                                    fontSize: 16.sp,
+                          return BlocBuilder<BottomsheetCubit,
+                              BottomsheetState>(
+                            builder: (context, state) {
+                              return GestureDetector(
+                                onTap: () {
+                                  context
+                                      .read<BottomsheetCubit>()
+                                      .updateSelected(index);
+                                },
+                                child: Container(
+                                  decoration: (context
+                                              .read<BottomsheetCubit>()
+                                              .index ==
+                                          index)
+                                      ? BoxDecoration(
+                                          color: AppColors.purpleSecondary,
+                                          borderRadius:
+                                              BorderRadius.circular(8.r),
+                                          border: Border.all(
+                                              color: AppColors.purplePrimary))
+                                      : (index == 7 &&
+                                              context
+                                                      .read<BottomsheetCubit>()
+                                                      .seeOther ==
+                                                  false)
+                                          ? BoxDecoration(
+                                              color: AppColors.purpleSecondary,
+                                              borderRadius:
+                                                  BorderRadius.circular(8.r),
+                                              border: Border.all(
+                                                  color: AppColors.white))
+                                          : BoxDecoration(
+                                              color: AppColors.unselectedGrid,
+                                              borderRadius:
+                                                  BorderRadius.circular(8.r),
+                                              border: Border.all(
+                                                  color: AppColors.white)),
+                                  child: Center(
+                                    child: (index == 7 &&
+                                            context
+                                                .read<BottomsheetCubit>()
+                                                .seeOther == false)
+                                        ? Text("See Other",
+                                            style: TextStyle(
+                                                color: AppColors.purplePrimary,
+                                                fontSize: 13.sp,
+                                                fontWeight: FontWeight.w500))
+                                        : Image.asset(images[index],
+                                            height: 32.h, width: 32.w),
                                   ),
                                 ),
-                              ),
-                            ),
+                              );
+                            },
                           );
                         },
                       ),
                     ),
-                    20.verticalSpace,
+                    10.verticalSpace,
                     CustomButton(
                         text: AppLocalizations.of(context)!.continueText,
                         onPressed: () {},
