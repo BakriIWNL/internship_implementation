@@ -21,31 +21,29 @@ class NewAccount extends StatelessWidget {
       bottomSheet: BlocBuilder<BottomsheetCubit, BottomsheetState>(
         builder: (context, state) {
           if (state.state == BottomSheetStates.bank) {
-            debugPrint("Bank");
             return BankBottomsheet(
               height: state.height,
               onChanged: (value) =>
                   context.read<BottomsheetCubit>().selectedOption(value),
               controller: context.read<BottomsheetCubit>().nameController,
               value: context.read<BottomsheetCubit>().value,
-              items: const <DropdownMenuItem<String>>[
-                DropdownMenuItem(value: '0', child: Text("Bank")),
-                DropdownMenuItem(value: '1', child: Text("Debit Card")),
-                DropdownMenuItem(value: '2', child: Text("Credit Card"))
+              items: <DropdownMenuItem<String>>[
+                DropdownMenuItem(value: '0', child: Text(AppLocalizations.of(context)!.bank)),
+                DropdownMenuItem(value: '1', child: Text(AppLocalizations.of(context)!.debitCard)),
+                DropdownMenuItem(value: '2', child: Text(AppLocalizations.of(context)!.creditCard))
               ],
             );
           }else {
-            debugPrint("BOTTOM SHEET");
             return DefaultBottomSheet(
               height: state.height,
               onChanged: (value) =>
                   context.read<BottomsheetCubit>().selectedOption(value),
               controller: context.read<BottomsheetCubit>().nameController,
               value: context.read<BottomsheetCubit>().value,
-              items: const <DropdownMenuItem<String>>[
-                DropdownMenuItem(value: '0', child: Text("Bank")),
-                DropdownMenuItem(value: '1', child: Text("Debit Card")),
-                DropdownMenuItem(value: '2', child: Text("Credit Card"))
+              items: <DropdownMenuItem<String>>[
+                DropdownMenuItem(value: '0', child: Text(AppLocalizations.of(context)!.bank)),
+                DropdownMenuItem(value: '1', child: Text(AppLocalizations.of(context)!.debitCard)),
+                DropdownMenuItem(value: '2', child: Text(AppLocalizations.of(context)!.creditCard))
               ],
             );
           }

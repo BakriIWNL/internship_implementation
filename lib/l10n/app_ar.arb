@@ -32,5 +32,8 @@
   "letsGo": "هيا بنا",
   "newAccount": "إضافة حساب جديد",
   "balance": "الرصيد",
-  "accountType": "نوع الحساب"
+  "accountType": "نوع الحساب",
+  "bank": "بنك",
+  "debitCard": "بطاقة الخصم",
+  "creditCard": "بطاقة الائتمان"
 }

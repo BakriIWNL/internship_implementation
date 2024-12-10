@@ -32,5 +32,9 @@
   "letsGo": "Let's go",
   "newAccount": "Add new account",
   "balance": "Balance",
-  "accountType":"Account Type"
+  "accountType":"Account Type",
+  "bank":"Bank",
+  "debitCard":"Debit Card",
+  "creditCard":"Credit Card"
+
 }

@@ -21,7 +21,7 @@ class SetupCubit extends Cubit<SetupState> {
     if (!checkComplete(pinController.text.length)) {
       pinController.text += number.toString();
       emit(state.copyWith(states: GenericStates.updateUI));
-      emit(state.copyWith(states: GenericStates.initial));
+      emit(state.copyWith(states: GenericStates.success));
     }
   }
 
@@ -30,7 +30,7 @@ class SetupCubit extends Cubit<SetupState> {
       pinController.text =
           pinController.text.substring(0, pinController.text.length - 1);
       emit(state.copyWith(states: GenericStates.updateUI));
-      emit(state.copyWith(states: GenericStates.initial));
+      emit(state.copyWith(states: GenericStates.success));
     }
   }
 
