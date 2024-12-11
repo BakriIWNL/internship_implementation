@@ -34,5 +34,4 @@ class SignupCubit extends Cubit<SignupState> {
     emit(state.copyWith(isCheckboxChecked: checkboxValue));
   }
 
-
 }

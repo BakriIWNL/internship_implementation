@@ -11,7 +11,12 @@ import 'package:itcores_internship_project/features/onboarding/presentation/cubi
 import 'package:itcores_internship_project/features/onboarding/presentation/cubit/splash_screen/splash_screen_cubit.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:itcores_internship_project/features/onboarding/presentation/screens/splash_screen.dart';
+import 'package:itcores_internship_project/features/setup/presentation/cubit/bottom_sheet/bottomsheet_cubit.dart';
+import 'package:itcores_internship_project/features/setup/presentation/cubit/setup/setup_cubit.dart';
+import 'package:itcores_internship_project/features/setup/presentation/screens/lets_setup.dart';
+import 'package:itcores_internship_project/features/setup/presentation/screens/new_account.dart';
 import 'package:itcores_internship_project/features/signup/presentation/cubits/signup/signup_cubit.dart';
+import 'package:itcores_internship_project/features/setup/presentation/screens/enter_pin_screen.dart';
 import 'package:itcores_internship_project/features/signup/presentation/screens/signup_screen.dart';
 
 class Routes {
@@ -65,6 +70,24 @@ class Routes {
       GoRoute(
           path: RouteNames.emailSent,
           builder: (context, state) => const EmailSent()),
+      GoRoute(
+          path: RouteNames.enterPin,
+          builder: (context, state) => BlocProvider(
+                create: (context) => SetupCubit(),
+                child: const EnterPinScreen(),
+              )),
+      GoRoute(
+          path: RouteNames.letsSetup,
+          builder: (context, state) => BlocProvider(
+                create: (context) => SetupCubit(),
+                child: const LetsSetup(),
+              )),
+      GoRoute(
+          path: RouteNames.newAccount,
+          builder: (context, state) => BlocProvider(
+                create: (context) => BottomsheetCubit(),
+                child: const NewAccount(),
+              )),
     ],
   );
 }

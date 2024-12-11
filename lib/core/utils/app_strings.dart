@@ -31,6 +31,7 @@ class AppStrings {
   static const String alreadyHaveAccount = "Already have an account? ";
   static const String orWith = "Or sign up with";
   static const String googleSignUp = "Sign up with Google";
+  static const String setupPin = "let's setup your PIN";
 
   // final Map<String, dynamic> EN = {
   //     appName: 'montra',
