@@ -18,7 +18,7 @@ class EnterPinScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              context.localizations.setupPin,
+              AppLocalizations.of(context)!.setupPin,
               style: TextStyle(
                   fontSize: 18.sp,
                   color: AppColors.white,

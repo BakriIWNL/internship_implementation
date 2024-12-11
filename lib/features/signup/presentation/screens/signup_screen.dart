@@ -43,7 +43,7 @@ class SignUpScreen extends StatelessWidget {
           title: Padding(
             padding: EdgeInsets.only(top: 25.h),
             child: Text(
-              context.localizations.signUp,
+              AppLocalizations.of(context)!.signUp,
               style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600,
@@ -97,7 +97,7 @@ class SignUpScreen extends StatelessWidget {
                   19.verticalSpace,
                   RichText(
                     text: TextSpan(
-                      text: context.localizations.alreadyHaveAccount,
+                      text: AppLocalizations.of(context)!.alreadyHaveAccount,
                       style: TextStyle(
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
@@ -105,7 +105,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       children: [
                         TextSpan(
-                          text: context.localizations.logIn,
+                          text: AppLocalizations.of(context)!.logIn,
                           style: TextStyle(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w500,

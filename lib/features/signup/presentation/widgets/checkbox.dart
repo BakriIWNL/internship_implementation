@@ -33,7 +33,7 @@ class CheckBox extends StatelessWidget {
               Expanded(
                 child: RichText(
                   text: TextSpan(
-                      text: context.localizations.signUpAgree,
+                      text: AppLocalizations.of(context)!.signUpAgree,
                       style: TextStyle(
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
@@ -41,11 +41,11 @@ class CheckBox extends StatelessWidget {
                       ),
                       children: [
                         TextSpan(
-                          text: context.localizations.termsAndConditions,
+                          text: AppLocalizations.of(context)!.termsAndConditions,
                           recognizer: TapGestureRecognizer()
                             ..onTap = () async {
                               Uri url =
-                                  context.localizations.termsAndConditionsLink as Uri;
+                                  AppLocalizations.of(context)!.termsAndConditionsLink as Uri;
                               if (!await launchUrl(
                                 url,
                                 mode: LaunchMode.externalApplication,

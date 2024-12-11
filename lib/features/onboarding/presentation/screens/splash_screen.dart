@@ -43,7 +43,7 @@ class SplashScreen extends StatelessWidget {
                 ),
               )),
           Center(
-            child: Text(context.localizations.appName,
+            child: Text(AppLocalizations.of(context)!.appName,
                 style: TextStyle(
                   fontSize: 56.sp,
                   fontWeight: FontWeight.w700,

@@ -64,16 +64,16 @@ class BankBottomsheet extends StatelessWidget {
                     SizedBox(
                       width: 343.w,
                       child: NewCustomTextField(
-                          hint: context.localizations.name,
+                          hint: AppLocalizations.of(context)!.name,
                           controller: controller,
-                          validationType: context.localizations.name,
+                          validationType: AppLocalizations.of(context)!.name,
                           height: 56.h,
                           password: false,
                           width: 343.w),
                     ),
                     20.verticalSpace,
                     CustomDropdown(
-                      hint: context.localizations.accountType,
+                      hint: AppLocalizations.of(context)!.accountType,
                       width: 343.w,
                       height: 50.h,
                       items: items,
@@ -88,7 +88,7 @@ class BankBottomsheet extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          context.localizations.bank,
+                          AppLocalizations.of(context)!.bank,
                           style: TextStyle(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
@@ -170,7 +170,7 @@ class BankBottomsheet extends StatelessWidget {
                     ),
                     10.verticalSpace,
                     CustomButton(
-                        text: context.localizations.continueText,
+                        text: AppLocalizations.of(context)!.continueText,
                         onPressed: () {},
                         size: Size(343.w, 56.h))
                   ],

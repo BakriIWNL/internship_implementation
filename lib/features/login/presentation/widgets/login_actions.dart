@@ -15,7 +15,7 @@ class LoginActions extends StatelessWidget {
     return Column(
       children: [
         CustomButton(
-          text: context.localizations.logIn,
+          text: AppLocalizations.of(context)!.logIn,
           onPressed: () => {context.go(RouteNames.signUp)},
           size: Size(343.w, 56.h),
         ),
@@ -25,7 +25,7 @@ class LoginActions extends StatelessWidget {
             context.go(RouteNames.forgotPassword);
           },
           child: Text(
-            context.localizations.forgotPasswordQ,
+            AppLocalizations.of(context)!.forgotPasswordQ,
             style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600,
@@ -35,7 +35,7 @@ class LoginActions extends StatelessWidget {
         38.verticalSpace,
         RichText(
           text: TextSpan(
-            text: context.localizations.dontHave,
+            text: AppLocalizations.of(context)!.dontHave,
             style: TextStyle(
               fontSize: 16.sp,
               fontWeight: FontWeight.w500,
@@ -43,7 +43,7 @@ class LoginActions extends StatelessWidget {
             ),
             children: [
               TextSpan(
-                text: context.localizations.signUp,
+                text: AppLocalizations.of(context)!.signUp,
                 style: TextStyle(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w500,

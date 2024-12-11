@@ -18,7 +18,7 @@ class SignupTextFields extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: NewCustomTextField(
-            hint: context.localizations.name,
+            hint: AppLocalizations.of(context)!.name,
             controller: context.read<SignupCubit>().nameController,
             validationType: AppStrings.name,
             height: 56.h,
@@ -30,7 +30,7 @@ class SignupTextFields extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: NewCustomTextField(
-            hint: context.localizations.email,
+            hint: AppLocalizations.of(context)!.email,
             controller: context.read<SignupCubit>().emailController,
             validationType: AppStrings.email,
             height: 56.h,
@@ -44,7 +44,7 @@ class SignupTextFields extends StatelessWidget {
           child: BlocBuilder<SignupCubit, SignupState>(
             builder: (context, state) {
               return NewCustomTextField(
-                hint: context.localizations.password,
+                hint: AppLocalizations.of(context)!.password,
                 controller: context.read<SignupCubit>().passwordController,
                 validationType: AppStrings.password,
                 height: 56.h,

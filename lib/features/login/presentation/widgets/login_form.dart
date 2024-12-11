@@ -19,7 +19,7 @@ class LoginForm extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: NewCustomTextField(
-            hint: context.localizations.email,
+            hint: AppLocalizations.of(context)!.email,
             controller: context.read<LoginCubit>().emailController,
             validationType: AppStrings.email,
             height: 56.h,
@@ -33,7 +33,7 @@ class LoginForm extends StatelessWidget {
           child: BlocBuilder<LoginCubit, LoginState>(
             builder: (context, state) {
               return NewCustomTextField(
-                hint: context.localizations.password,
+                hint: AppLocalizations.of(context)!.password,
                 controller: context.read<LoginCubit>().passwordController,
                 validationType: AppStrings.password,
                 height: 56.h,

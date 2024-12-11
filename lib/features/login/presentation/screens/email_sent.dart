@@ -25,7 +25,7 @@ class EmailSent extends StatelessWidget {
           ),
           18.verticalSpace,
           Text(
-            context.localizations.emailOnTheWay,
+            AppLocalizations.of(context)!.emailOnTheWay,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 24.sp,
@@ -34,7 +34,7 @@ class EmailSent extends StatelessWidget {
           ),
           24.verticalSpace,
           Text(
-            context.localizations.checkEmail,
+            AppLocalizations.of(context)!.checkEmail,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 16.sp,
@@ -43,7 +43,7 @@ class EmailSent extends StatelessWidget {
           ),
           190.verticalSpace,
           CustomButton(
-              text: context.localizations.backToLogin,
+              text: AppLocalizations.of(context)!.backToLogin,
               onPressed: () {
                 context.go(RouteNames.login);
               },
