@@ -25,5 +25,16 @@
   "termsAndConditionsLink": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
   "alreadyHaveAccount": "Already have an account?",
   "orWith": "Or sign up with",
-  "googleSignUp": "Sign up with Google"
+  "googleSignUp": "Sign up with Google",
+  "setupPin": "Let's setup your PIN",
+  "setupAccount": "Let's setup your account!",
+  "accountCanBe":"Account can be your bank, credit card or your wallet.",
+  "letsGo": "Let's go",
+  "newAccount": "Add new account",
+  "balance": "Balance",
+  "accountType":"Account Type",
+  "bank":"Bank",
+  "debitCard":"Debit Card",
+  "creditCard":"Credit Card"
+
 }

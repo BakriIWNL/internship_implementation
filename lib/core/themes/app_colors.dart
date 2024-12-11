@@ -15,7 +15,9 @@ class AppColors {
   static const yellowSecondary = Color(0xFFFCEED4);
   static const purplePrimary = Color(0xFF7F3DFF);
   static const purpleSecondary = Color(0xFFEEE5FF);
+  static const purpleTertiary = Color(0XFFaa80ff);
   static const bluePrimary = Color(0xFF0077FF);
   static const blueSecondary = Color(0xFFBDDCFF);
   static const blur = Color(0xFFdb4dff);
+  static const border = Color(0XFFF1F1FA);
 }

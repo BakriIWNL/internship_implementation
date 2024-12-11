@@ -17,7 +17,7 @@ class SignUpButtons extends StatelessWidget {
       children: [
         CustomButton(
             text: AppLocalizations.of(context)!.signUp,
-            onPressed: () => {context.go(RouteNames.signUp)},
+            onPressed: () => {context.go(RouteNames.enterPin)},
             size: Size(343.w, 56.h)),
         12.verticalSpace,
         Text(AppLocalizations.of(context)!.orWith,
