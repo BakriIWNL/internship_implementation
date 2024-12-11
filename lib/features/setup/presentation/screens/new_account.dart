@@ -28,9 +28,9 @@ class NewAccount extends StatelessWidget {
               controller: context.read<BottomsheetCubit>().nameController,
               value: context.read<BottomsheetCubit>().value,
               items: <DropdownMenuItem<String>>[
-                DropdownMenuItem(value: '0', child: Text(AppLocalizations.of(context)!.bank)),
-                DropdownMenuItem(value: '1', child: Text(AppLocalizations.of(context)!.debitCard)),
-                DropdownMenuItem(value: '2', child: Text(AppLocalizations.of(context)!.creditCard))
+                DropdownMenuItem(value: '0', child: Text(context.localizations.bank)),
+                DropdownMenuItem(value: '1', child: Text(context.localizations.debitCard)),
+                DropdownMenuItem(value: '2', child: Text(context.localizations.creditCard))
               ],
             );
           }else {
@@ -41,9 +41,9 @@ class NewAccount extends StatelessWidget {
               controller: context.read<BottomsheetCubit>().nameController,
               value: context.read<BottomsheetCubit>().value,
               items: <DropdownMenuItem<String>>[
-                DropdownMenuItem(value: '0', child: Text(AppLocalizations.of(context)!.bank)),
-                DropdownMenuItem(value: '1', child: Text(AppLocalizations.of(context)!.debitCard)),
-                DropdownMenuItem(value: '2', child: Text(AppLocalizations.of(context)!.creditCard))
+                DropdownMenuItem(value: '0', child: Text(context.localizations.bank)),
+                DropdownMenuItem(value: '1', child: Text(context.localizations.debitCard)),
+                DropdownMenuItem(value: '2', child: Text(context.localizations.creditCard))
               ],
             );
           }
@@ -70,7 +70,7 @@ class NewAccount extends StatelessWidget {
         title: Padding(
           padding: EdgeInsets.only(top: 25.h),
           child: Text(
-            AppLocalizations.of(context)!.newAccount,
+            context.localizations.newAccount,
             style: TextStyle(
               fontSize: 18.sp,
               fontWeight: FontWeight.w600,

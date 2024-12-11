@@ -16,11 +16,11 @@ class SignUpButtons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         CustomButton(
-            text: AppLocalizations.of(context)!.signUp,
+            text: context.localizations.signUp,
             onPressed: () => {context.go(RouteNames.enterPin)},
             size: Size(343.w, 56.h)),
         12.verticalSpace,
-        Text(AppLocalizations.of(context)!.orWith,
+        Text(context.localizations.orWith,
             style: TextStyle(
               fontSize: 14.sp,
               fontWeight: FontWeight.w700,
@@ -48,7 +48,7 @@ class SignUpButtons extends StatelessWidget {
                 width: 35.w,
               ),
               10.horizontalSpace,
-              Text(AppLocalizations.of(context)!.googleSignUp,
+              Text(context.localizations.googleSignUp,
                   style: TextStyle(
                       color: AppColors.blackText,
                       fontSize: 18.sp,

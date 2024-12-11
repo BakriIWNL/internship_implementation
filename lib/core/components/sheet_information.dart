@@ -26,7 +26,7 @@ class SheetInformation extends StatelessWidget {
                 children: [
                   space.verticalSpace,
                   Text(
-                    AppLocalizations.of(context)!.balance,
+                    context.localizations.balance,
                     style: TextStyle(
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w600,

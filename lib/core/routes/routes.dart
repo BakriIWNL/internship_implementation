@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
+import 'package:itcores_internship_project/features/home/presentation/widgets/home_screen.dart';
 import 'package:itcores_internship_project/features/login/presentation/cubit/forgot_password/forgotpassword_cubit.dart';
 import 'package:itcores_internship_project/features/login/presentation/cubit/login/login_cubit.dart';
 import 'package:itcores_internship_project/features/login/presentation/screens/email_sent.dart';
@@ -88,6 +89,7 @@ class Routes {
                 create: (context) => BottomsheetCubit(),
                 child: const NewAccount(),
               )),
+      GoRoute(path: RouteNames.home, builder: (context, state) => const HomeScreen()),
     ],
   );
 }

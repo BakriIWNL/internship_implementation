@@ -41,7 +41,7 @@ class ForgotPasswordScreen extends StatelessWidget {
           title: Padding(
             padding: EdgeInsets.only(top: 25.h),
             child: Text(
-              AppLocalizations.of(context)!.forgotPassword,
+              context.localizations.forgotPassword,
               style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600,
@@ -62,7 +62,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                       width: 343.w,
                       height: 150.h,
                       child: Text(
-                        AppLocalizations.of(context)!.dontWorry,
+                        context.localizations.dontWorry,
                         style: TextStyle(
                             color: AppColors.black,
                             fontSize: 24.sp,
@@ -73,10 +73,10 @@ class ForgotPasswordScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.w),
                     child: NewCustomTextField(
-                      hint: AppLocalizations.of(context)!.email,
+                      hint: context.localizations.email,
                       controller:
                           context.read<ForgotpasswordCubit>().emailController,
-                      validationType: AppLocalizations.of(context)!.email,
+                      validationType: context.localizations.email,
                       height: 56.h,
                       width: 343.w,
                       password: false,
@@ -84,7 +84,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   ),
                   40.verticalSpace,
                   CustomButton(
-                    text: AppLocalizations.of(context)!.continueText,
+                    text: context.localizations.continueText,
                     onPressed: () => {context.go(RouteNames.emailSent)},
                     size: Size(343.w, 56.h),
                   ),

@@ -24,12 +24,12 @@ class OnboardingScreen extends StatelessWidget {
                 const OnboardingCarousel(),
                 const OnboardingCarouselIndicator(),
                 CustomButton(
-                    text: AppLocalizations.of(context)!.signUp,
+                    text: context.localizations.signUp,
                     onPressed: () => context.go(RouteNames.signUp),
                     size: Size(343.w, 56.h)),
                 16.verticalSpace,
                 CustomButton(
-                  text: AppLocalizations.of(context)!.logIn,
+                  text: context.localizations.logIn,
                   onPressed: () => context.go(RouteNames.login),
                   size: Size(343.w, 56.h),
                   textColor: AppColors.purplePrimary,

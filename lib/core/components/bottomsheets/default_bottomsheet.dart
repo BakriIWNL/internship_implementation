@@ -41,16 +41,16 @@ class DefaultBottomSheet extends StatelessWidget {
                 SizedBox(
                   width: 343.w,
                   child: NewCustomTextField(
-                      hint: AppLocalizations.of(context)!.name,
+                      hint: context.localizations.name,
                       controller: controller,
-                      validationType: AppLocalizations.of(context)!.name,
+                      validationType: context.localizations.name,
                       height: 56.h,
                       password: false,
                       width: 343.w),
                 ),
                 20.verticalSpace,
                 CustomDropdown(
-                  hint: AppLocalizations.of(context)!.accountType,
+                  hint: context.localizations.accountType,
                   width: 343.w,
                   height: 50.h,
                   items: items,
@@ -61,7 +61,7 @@ class DefaultBottomSheet extends StatelessWidget {
                 ),
                 20.verticalSpace,
                 CustomButton(
-                    text: AppLocalizations.of(context)!.continueText,
+                    text: context.localizations.continueText,
                     onPressed: () {},
                     size: Size(343.w, 56.h))
               ],

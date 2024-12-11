@@ -39,7 +39,7 @@ class LogInScreen extends StatelessWidget {
           title: Padding(
             padding: EdgeInsets.only(top: 25.h),
             child: Text(
-              AppLocalizations.of(context)!.logIn,
+              context.localizations.logIn,
               style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600,

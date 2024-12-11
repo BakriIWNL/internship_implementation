@@ -17,7 +17,7 @@ class SplashScreen extends StatelessWidget {
     return BlocListener<SplashScreenCubit, SplashScreenState>(
       listener: (context, state) {
         if (state.state == SplashStates.concluded) {
-          context.go(RouteNames.newAccount);
+          context.go(RouteNames.home);
         }
       },
       child: Scaffold(
@@ -43,7 +43,7 @@ class SplashScreen extends StatelessWidget {
                 ),
               )),
           Center(
-            child: Text(AppLocalizations.of(context)!.appName,
+            child: Text(context.localizations.appName,
                 style: TextStyle(
                   fontSize: 56.sp,
                   fontWeight: FontWeight.w700,

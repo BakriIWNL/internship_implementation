@@ -7,4 +7,6 @@ class AppIcons{
   static Icon arrowBackWhite = Icon(Icons.arrow_back_ios,size: 24.sp,color:AppColors.white ,);
   static Icon visible = const Icon(Icons.visibility_off_outlined);
   static Icon invisible = const Icon(Icons.visibility_outlined);
+  static Icon profile = const Icon(Icons.person);
+  static Icon add = const Icon(Icons.add);
 }

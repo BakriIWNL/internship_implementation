@@ -18,16 +18,16 @@ class LetsSetup extends StatelessWidget {
             SizedBox(
               width: 343.w,
               height: 100.h,
-              child: Text(AppLocalizations.of(context)!.setupAccount,style: TextStyle(fontWeight: FontWeight.w500,fontSize: 36.sp), )
+              child: Text(context.localizations.setupAccount,style: TextStyle(fontWeight: FontWeight.w500,fontSize: 36.sp), )
               ),
               37.verticalSpace,
               SizedBox(
               width: 343.w,
               height: 50.h,
-              child: Text(AppLocalizations.of(context)!.accountCanBe, style: TextStyle(fontWeight: FontWeight.w500,fontSize: 14.sp))
+              child: Text(context.localizations.accountCanBe, style: TextStyle(fontWeight: FontWeight.w500,fontSize: 14.sp))
               ),
               420.verticalSpace,
-              CustomButton(text: AppLocalizations.of(context)!.letsGo, onPressed: (){
+              CustomButton(text: context.localizations.letsGo, onPressed: (){
                 context.go(RouteNames.newAccount);
               }, size: Size(343.w,56.h),)
           ],
