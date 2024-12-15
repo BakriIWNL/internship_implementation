@@ -8,4 +8,5 @@ class RouteNames {
   static const String enterPin = '/enterpin';
   static const String letsSetup = "/letssetup";
   static const String newAccount = "/newaccount";
+  static const String home = "/home";
 }

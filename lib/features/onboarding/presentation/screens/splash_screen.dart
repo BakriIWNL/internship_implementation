@@ -17,7 +17,7 @@ class SplashScreen extends StatelessWidget {
     return BlocListener<SplashScreenCubit, SplashScreenState>(
       listener: (context, state) {
         if (state.state == SplashStates.concluded) {
-          context.go(RouteNames.newAccount);
+          context.go(RouteNames.home);
         }
       },
       child: Scaffold(
