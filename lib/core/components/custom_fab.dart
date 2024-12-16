@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:itcores_internship_project/core/components/expandable_fab/action_button_builder.dart';
-import 'package:itcores_internship_project/core/components/expandable_fab/expandable_fab.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 
 class CustomExpandableFab extends StatelessWidget {
@@ -16,7 +15,6 @@ class CustomExpandableFab extends StatelessWidget {
         color: AppColors.purplePrimaryOpaque,
       ),
       distance: 80.sp,
-      // childrenOffset: const Offset(0, 200),
       openButtonBuilder: RotateFloatingActionButtonBuilder(
         child: Icon(
           Icons.add,
