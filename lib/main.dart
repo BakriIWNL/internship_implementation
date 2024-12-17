@@ -6,8 +6,14 @@ import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/core/routes/routes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:itcores_internship_project/cubit/language_cubit.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+Future main() async{
+  WidgetsFlutterBinding.ensureInitialized(); 
+  await Hive.initFlutter();
+
+  await Hive.openBox('userHiveBox'); 
+
   runApp(const MyApp());
 }
 

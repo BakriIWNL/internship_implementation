@@ -8,9 +8,12 @@ class AppColors {
   static const greyText = Color(0xFF91919F);
   static const greyPrimary = Color(0xFF91919F);
   static const unselected = Color(0xFFC6C6C6);
+  static const blackPrimary = Color(0xFF0D0E0F);
+  static const blackSecondary = Color(0xFFE3E5E5);
   static const redPrimary = Color(0xFFFD3C4A);
   static const redSecondary = Color(0xFFFDD5D7);
   static const greenPrimary = Color(0xFF00A86B);
+  static const greenSecondary = Color(0xFFCFFAEA);
   static const yellowPrimary = Color(0xFFFCAC12);
   static const yellowSecondary = Color(0xFFFCEED4);
   static const purplePrimary = Color(0xFF7F3DFF);

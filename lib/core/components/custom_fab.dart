@@ -55,10 +55,10 @@ class CustomExpandableFab extends StatelessWidget {
               color: AppColors.greenPrimary,
               borderRadius: BorderRadius.all(Radius.circular(100.r)),
             ),
-            child: Icon(
-              Icons.close,
-              size: 40.sp,
-              color: AppColors.white,
+            child: IconButton(
+              icon: Icon(Icons.close,size: 40.sp,
+              color: AppColors.white,),
+              onPressed: (){},
             ),
           ),
         ),
