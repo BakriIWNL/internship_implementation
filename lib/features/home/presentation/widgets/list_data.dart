@@ -38,7 +38,7 @@ class ListData extends StatelessWidget {
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return CustomItem(reason: reasons[index], amount: amount[index], dataTime: DateTime.now(), description: description);
+                return CustomItem(reason: reasons[index], amount: amount[index], dateTime: DateTime.now(), description: description);
               },
               childCount: reasons.length,
             ),

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:itcores_internship_project/core/components/custom_button.dart';
 import 'package:itcores_internship_project/core/components/custom_dropdown.dart';
 import 'package:itcores_internship_project/core/components/customtextfield.dart';
-import 'package:itcores_internship_project/core/utils/app_colors.dart';
+import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DefaultBottomSheet extends StatelessWidget {

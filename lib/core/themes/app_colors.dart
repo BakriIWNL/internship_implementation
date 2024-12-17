@@ -24,5 +24,6 @@ class AppColors {
   static const blur = Color(0xFFdb4dff);
   static const border = Color(0XFFF1F1FA);
   static const bottomNavBar = Color(0XFFFCFCFC);
+  static const unselectedGrid = Color(0XFFF1F1FA);
   static Color purplePrimaryOpaque = const Color(0xFF7F3DFF).withOpacity(0.2);
 }

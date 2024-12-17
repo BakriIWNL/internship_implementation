@@ -6,7 +6,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 
 class LetsSetup extends StatelessWidget {
-  const LetsSetup({super.key});
+  const LetsSetup({super.key, required this.pin});
+  final String pin;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class LetsSetup extends StatelessWidget {
               ),
               420.verticalSpace,
               CustomButton(text: AppLocalizations.of(context)!.letsGo, onPressed: (){
-                context.go(RouteNames.newAccount);
+                context.goNamed(RouteNames.newAccount, pathParameters: {'pin': pin});
               }, size: Size(343.w,56.h),)
           ],
         ),

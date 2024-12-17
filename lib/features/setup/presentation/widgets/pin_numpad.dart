@@ -25,7 +25,11 @@ class PinNumpad extends StatelessWidget {
               return Padding(
                 padding: EdgeInsets.only(top: 6.h),
                 child: IconButton(
-                  icon: Icon(Icons.arrow_back,color: AppColors.white,size: 50.sp,),
+                  icon: Icon(
+                    Icons.arrow_back,
+                    color: AppColors.white,
+                    size: 50.sp,
+                  ),
                   onPressed: () {
                     return context.read<SetupCubit>().removedPin();
                   },
@@ -40,19 +44,25 @@ class PinNumpad extends StatelessWidget {
               return Padding(
                 padding: EdgeInsets.only(top: 6.h),
                 child: IconButton(
-                  icon: Icon(Icons.arrow_forward,color: AppColors.white,size: 50.sp,),
+                  icon: Icon(
+                    Icons.arrow_forward,
+                    color: AppColors.white,
+                    size: 50.sp,
+                  ),
                   onPressed: () {
-                    if(context.read<SetupCubit>().checkComplete(context.read<SetupCubit>().pinController.text.length)){
-                      context.go(RouteNames.letsSetup);
+                    if (context.read<SetupCubit>().checkComplete(
+                        context.read<SetupCubit>().pinController.text.length)) {
+                      context.goNamed(RouteNames.letsSetup, pathParameters: {
+                        'pin': context.read<SetupCubit>().pinController.text
+                      });
                     }
                   },
                 ),
               );
-            }else {
+            } else {
               return NumpadButton(
-                number: index + 1,
-                controller: context.read<SetupCubit>().pinController
-              );
+                  number: index + 1,
+                  controller: context.read<SetupCubit>().pinController);
             }
           },
         ),

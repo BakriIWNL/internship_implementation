@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:hive/hive.dart';
 import 'package:itcores_internship_project/core/components/custom_button.dart';
 import 'package:itcores_internship_project/core/components/custom_dropdown.dart';
 import 'package:itcores_internship_project/core/components/customtextfield.dart';
+import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_assets.dart';
-import 'package:itcores_internship_project/core/utils/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:itcores_internship_project/core/themes/app_colors.dart';
+import 'package:itcores_internship_project/core/utils/user_model.dart';
 import 'package:itcores_internship_project/features/setup/presentation/cubit/bottom_sheet/bottomsheet_cubit.dart';
 
 class BankBottomsheet extends StatelessWidget {
@@ -15,6 +19,7 @@ class BankBottomsheet extends StatelessWidget {
   final double height;
   final List<DropdownMenuItem<String>> items;
   final TextEditingController controller;
+  final String pin;
 
   const BankBottomsheet(
       {super.key,
@@ -22,7 +27,7 @@ class BankBottomsheet extends StatelessWidget {
       required this.value,
       required this.items,
       required this.controller,
-      required this.height});
+      required this.height, this.pin= ''});
 
   @override
   Widget build(BuildContext context) {
@@ -151,8 +156,9 @@ class BankBottomsheet extends StatelessWidget {
                                   child: Center(
                                     child: (index == 7 &&
                                             context
-                                                .read<BottomsheetCubit>()
-                                                .seeOther == false)
+                                                    .read<BottomsheetCubit>()
+                                                    .seeOther ==
+                                                false)
                                         ? Text("See Other",
                                             style: TextStyle(
                                                 color: AppColors.purplePrimary,
@@ -171,7 +177,15 @@ class BankBottomsheet extends StatelessWidget {
                     10.verticalSpace,
                     CustomButton(
                         text: AppLocalizations.of(context)!.continueText,
-                        onPressed: () {},
+                        onPressed: () async {
+                          Box<UserModel> userBox = Hive.box<UserModel>('user');
+                          UserModel user = UserModel(pinNumber: pin,
+                           accountNames: [context.read<BottomsheetCubit>().nameController.text], 
+                           accountTypes: [context.read<BottomsheetCubit>().value], 
+                           accountAmounts: ["9400"]);
+                          await userBox.put("user", user);
+                          context.goNamed(RouteNames.home);
+                        },
                         size: Size(343.w, 56.h))
                   ],
                 ),

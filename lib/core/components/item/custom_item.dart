@@ -8,10 +8,10 @@ class CustomItem extends StatelessWidget {
   
   final String reason;
   final int amount;
-  final DateTime dataTime;
+  final DateTime dateTime;
   final String description;
 
-  const CustomItem({super.key,required this.reason, required this.amount, required this.dataTime,required this.description});
+  const CustomItem({super.key,required this.reason, required this.amount, required this.dateTime,required this.description});
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +81,7 @@ class CustomItem extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  DateFormat('hh:mm a').format(dataTime),
+                  DateFormat('hh:mm a').format(dateTime),
                   style: TextStyle(
                     color: AppColors.greyText,
                     fontSize: 13.sp,

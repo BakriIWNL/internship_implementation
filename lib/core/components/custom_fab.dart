@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 
 class CustomExpandableFab extends StatelessWidget {
@@ -58,7 +60,9 @@ class CustomExpandableFab extends StatelessWidget {
             child: IconButton(
               icon: Icon(Icons.close,size: 40.sp,
               color: AppColors.white,),
-              onPressed: (){},
+              onPressed: (){
+                context.go(RouteNames.income);
+              },
             ),
           ),
         ),
