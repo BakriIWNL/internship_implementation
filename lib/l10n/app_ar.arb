@@ -35,5 +35,19 @@
   "accountType": "نوع الحساب",
   "bank": "بنك",
   "debitCard": "بطاقة الخصم",
-  "creditCard": "بطاقة الائتمان"
+  "creditCard": "بطاقة الائتمان",
+  "income": "الدخل",
+  "today": "اليوم",
+  "week": "الأسبوع",
+  "month": "الشهر",
+  "year": "السنة",
+  "home": "الرئيسية",
+  "profile": "الملف الشخصي",
+  "transactions": "المعاملات",
+  "budget": "الميزانية",
+  "accountBalance": "رصيد الحساب",
+  "expenses": "المصروفات",
+  "spendFrequency": "تكرار الإنفاق",
+  "recentTransactions": "المعاملات الأخيرة",
+  "seeAll": "عرض الكل"
 }

@@ -35,6 +35,19 @@
   "accountType":"Account Type",
   "bank":"Bank",
   "debitCard":"Debit Card",
-  "creditCard":"Credit Card"
-
+  "creditCard":"Credit Card",
+  "income":"Income",
+  "today":"Today",
+  "week":"Week",
+  "month":"Month",
+  "year":"Year",
+  "home":"Home",
+  "profile":"Profile",
+  "transactions":"Transactions",
+  "budget":"Budget",
+  "accountBalance":"Account Balance",
+  "expenses":"Expenses",
+  "spendFrequency":"Spend Frequency",
+  "recentTransactions":"Recent Transactions",
+  "seeAll":"See All"
 }
