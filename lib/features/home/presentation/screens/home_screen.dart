@@ -6,10 +6,10 @@ import 'package:itcores_internship_project/core/components/custom_fab.dart';
 import 'package:itcores_internship_project/core/themes/app_assets.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/features/home/presentation/cubit/home_cubit.dart';
-import 'package:itcores_internship_project/features/home/presentation/widgets/bottomnavbar.dart';
-import 'package:itcores_internship_project/features/home/presentation/widgets/date_list.dart';
+import 'package:itcores_internship_project/features/home/presentation/widgets/bottom_nav_bar.dart';
+import 'package:itcores_internship_project/features/home/presentation/widgets/time_period.dart';
 import 'package:itcores_internship_project/features/home/presentation/widgets/home_appbar.dart';
-import 'package:itcores_internship_project/features/home/presentation/widgets/list_data.dart';
+import 'package:itcores_internship_project/features/home/presentation/widgets/fake_example.dart';
 import 'package:itcores_internship_project/features/home/presentation/widgets/number_card.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -93,7 +93,7 @@ class HomeScreen extends StatelessWidget {
                   height: 170.h,
                   width: 375.w,
                 ),
-                Center(child: DateList()),
+                const Center(child: TimePeriod()),
                 20.verticalSpace,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -124,7 +124,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 10.verticalSpace,
-                Center(child: ListData()),
+                Center(child: FakeExample()),
               ],
             ),
           ),

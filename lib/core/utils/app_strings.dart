@@ -1,16 +1,12 @@
 class AppStrings {
   static const String appName = "montra";
   static const String continueText = "Continue";
-
-  //Onboarding Strings
   static const String gainTotal = "Gain total control of your money";
   static const String gainTotalSub = "Become your own money manager and make every cent count";
   static const String knowWhere = "Know where your money goes";
   static const String knowWhereSub = "Track your transaction easily, with categories and financial report ";
   static const String planningAhead = "Planning ahead";
   static const String planningAheadSub = "Setup your budget for each category so you are in control";
-
-  //login Strings
   static const String logIn = "Login";
   static const String forgotPasswordQ = "Forgot Password?";
   static const String dontHave = "Don’t have an account yet? ";
@@ -19,8 +15,6 @@ class AppStrings {
   static const String emailOnTheWay = "Your email is on the way!";
   static const String checkEmail = "We have sent an email to your email address. Please check your email to reset your password.";
   static const String backToLogin = "Back to Login";
-
-  //signup Strings
   static const String signUp = "Sign Up";
   static const String email = "Email";
   static const String password = "Password";
@@ -45,5 +39,14 @@ class AppStrings {
   static const String bca = "BCA";
   static const String expense = "Expense";
   static const String description = "Description";
-  static const reason = "Reason";
+  static const String reason = "Reason";
+  static const String shopping = "Shopping";
+  static const String food = "Food";
+  static const String transport = "Transportation";
+  static const String salary = "Salary";
+  static const String passiveIncome = "Passive Income";
+  static const String userHiveBox= "user";
+  static const String income = "Income";
+  static const String itemHiveBox = "item";
+  static const String subscription = "Subscription";
 }

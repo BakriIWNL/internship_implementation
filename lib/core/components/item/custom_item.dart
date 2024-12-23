@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
-import 'package:itcores_internship_project/core/components/item/itemdata.dart';
+import 'package:itcores_internship_project/core/components/item/item_data_model.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 
 class CustomItem extends StatelessWidget {
@@ -33,12 +33,12 @@ class CustomItem extends StatelessWidget {
                 height: 60.h,
                 width: 60.w,
                 decoration: BoxDecoration(
-                  color: ItemData.getItemMap(context)[reason]?.secondaryColor,
+                  color: ItemDataModel.getItemMap()[reason]?.secondaryColor,
                   borderRadius: BorderRadius.circular(24.r),
                 ),
                 child: Center(
                   child: Image.asset(
-                    ItemData.getItemMap(context)[reason]!.icon,
+                    ItemDataModel.getItemMap()[reason]!.icon,
                     height: 40.h,
                     width: 40.w,
                   ),
@@ -73,9 +73,9 @@ class CustomItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  ItemData.getItemMap(context)[reason]!.expense ? " - \$${amount.toString()}" : " + \$${amount.toString()}",
+                  ItemDataModel.getItemMap()[reason]!.expense ? " - \$${amount.toString()}" : " + \$${amount.toString()}",
                   style: TextStyle(
-                    color: ItemData.getItemMap(context)[reason]!.expense ? AppColors.redPrimary : AppColors.greenPrimary,
+                    color: ItemDataModel.getItemMap()[reason]!.expense ? AppColors.redPrimary : AppColors.greenPrimary,
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
                   ),

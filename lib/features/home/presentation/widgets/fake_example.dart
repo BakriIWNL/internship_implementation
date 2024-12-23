@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:itcores_internship_project/core/components/item/custom_item.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:itcores_internship_project/core/utils/app_strings.dart';
 
-class ListData extends StatelessWidget {
+class FakeExample extends StatelessWidget {
   // final List<String> items;
 
   // ListData({required this.items});
@@ -11,12 +12,12 @@ class ListData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> reasons = [
-      AppLocalizations.of(context)!.shopping,
-      AppLocalizations.of(context)!.subscription,
-      AppLocalizations.of(context)!.food,
-      AppLocalizations.of(context)!.transport,
-      AppLocalizations.of(context)!.salary,
-      AppLocalizations.of(context)!.passiveIncome
+      AppStrings.shopping,
+      AppStrings.subscription,
+      AppStrings.food,
+      AppStrings.transport,
+      AppStrings.salary,
+      AppStrings.passiveIncome
     ];
 
     final List<int> amount = [

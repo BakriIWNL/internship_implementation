@@ -12,20 +12,25 @@ class OnBoardingInfo {
   static List<OnBoardingInfo> getOnBoardingInfoList(BuildContext context) {
     return [
       OnBoardingInfo(
-        title: AppLocalizations.of(context)!.gainTotal,
-        subTitle: AppLocalizations.of(context)!.gainTotalSub,
-        imagePath: AppAssets.gaincontrol
+        title: context.Localizations.gainTotal,
+        subTitle: context.Localizations.gainTotalSub,
+        imagePath: AppAssets.gaincontrol,
       ),
       OnBoardingInfo(
-        title: AppLocalizations.of(context)!.knowWhere,
-        subTitle: AppLocalizations.of(context)!.knowWhereSub,
-        imagePath: AppAssets.knowwhere
+        title: context.Localizations.knowWhere,
+        subTitle: context.Localizations.knowWhereSub,
+        imagePath: AppAssets.knowwhere,
       ),
       OnBoardingInfo(
-        title: AppLocalizations.of(context)!.planningAhead,
-        subTitle: AppLocalizations.of(context)!.planningAheadSub,
-        imagePath: AppAssets.planningahead
+        title: context.Localizations.planningAhead,
+        subTitle: context.Localizations.planningAheadSub,
+        imagePath: AppAssets.planningahead,
       ),
     ];
   }
+}
+
+// Create a context extension for easier access to AppLocalizations
+extension AppLocalizationsExtensions on BuildContext {
+  AppLocalizations get Localizations => AppLocalizations.of(this)!;
 }
