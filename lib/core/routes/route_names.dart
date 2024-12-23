@@ -9,5 +9,6 @@ class RouteNames {
   static const String letsSetup = "/letssetup/:pin";
   static const String newAccount = "/newaccount/:pin";
   static const String home = "/home";
+  static const String expense = "/expense";
   static const String income = "/income";
 }

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hive/hive.dart';
 import 'package:itcores_internship_project/core/components/bottomsheets/log_bottomsheet.dart';
 import 'package:itcores_internship_project/core/components/sheet/sheet_information.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:itcores_internship_project/features/log/data/item_model.dart';
+import 'package:itcores_internship_project/core/utils/app_strings.dart';
 
 class ExpenseScreen extends StatelessWidget {
   const ExpenseScreen({super.key});
@@ -30,16 +29,16 @@ class ExpenseScreen extends StatelessWidget {
                 child: Text(AppLocalizations.of(context)!.creditCard))
           ],
           controller: nameController,
-          text: 'Add attachment',
+          text: AppLocalizations.of(context)!.addAttachment,
           onPressed: () {
-            Box<ItemModel> itemBox = Hive.box<ItemModel>('items');
-            itemBox.add(ItemModel(
-              reason: 'Reason',
-              description: 'Description',
-              amount: 0,
-              dateTime: DateTime.now(),
-              expense: false,
-            ));
+            // Box<ItemModel> itemBox = Hive.box<ItemModel>('items');
+            // itemBox.add(ItemModel(
+            //   reason: 'Reason',
+            //   description: 'Description',
+            //   amount: 0,
+            //   dateTime: DateTime.now(),
+            //   expense: false,
+            // ));
           }),
       backgroundColor: AppColors.redPrimary,
       appBar: AppBar(
@@ -62,7 +61,7 @@ class ExpenseScreen extends StatelessWidget {
         title: Padding(
           padding: EdgeInsets.only(top: 25.h),
           child: Text(
-            "Expense",
+            AppLocalizations.of(context)!.expenses,
             style: TextStyle(
               fontSize: 18.sp,
               fontWeight: FontWeight.w600,
@@ -73,7 +72,7 @@ class ExpenseScreen extends StatelessWidget {
       body: SheetInformation(
         space: 100.h.toInt(),
         textColor: AppColors.greenSecondary,
-        type: "Expense",
+        type: AppStrings.expense,
       ),
     );
   }

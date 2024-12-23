@@ -1,15 +1,22 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class SheetData {
 
-  SheetData({this.title = "Add new wallet",this.header = "Balance"});
+  SheetData({required this.title,required this.header});
 
   final String title;
   final String header;
 
-  Map<String,SheetData> getSheetData(){ 
+  static Map<String,SheetData> getSheetData(BuildContext context){ 
     return {
-      'Expense':SheetData(title: 'Expense',header: 'How much?'),
-      'Income':SheetData(title: 'Income',header: 'How much?'),
-      'Balance':SheetData(title: 'Add new wallet',header: 'Balance'),
+      context.loc.expenses:SheetData(title: context.loc.expenses,header: context.loc.howMuch),
+      context.loc.income:SheetData(title: context.loc.income,header: context.loc.howMuch),
+      context.loc.balance:SheetData(title: context.loc.addNewWallet,header: context.loc.balance),
     };
   }
+}
+
+extension AppLocalizationsExtensions on BuildContext {
+  AppLocalizations get loc => AppLocalizations.of(this)!;
 }

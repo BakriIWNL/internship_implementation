@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -88,7 +86,7 @@ class NewAccount extends StatelessWidget {
             textColor: AppColors.purpleTertiary,
             space:
                 (580 - context.read<BottomsheetCubit>().state.height).toInt(),
-            type: "Balance",
+            type: AppLocalizations.of(context)!.balance,
           );
         },
       ),

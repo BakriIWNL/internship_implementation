@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/components/custom_button.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:itcores_internship_project/core/routes/route_names.dart';
+import 'package:itcores_internship_project/core/utils/app_strings.dart';
 
 class LetsSetup extends StatelessWidget {
   const LetsSetup({super.key, required this.pin});
@@ -29,7 +29,7 @@ class LetsSetup extends StatelessWidget {
               ),
               420.verticalSpace,
               CustomButton(text: AppLocalizations.of(context)!.letsGo, onPressed: (){
-                context.goNamed(RouteNames.newAccount, pathParameters: {'pin': pin});
+                context.goNamed(AppStrings.newAccount, pathParameters: {'pin': pin});
               }, size: Size(343.w,56.h),)
           ],
         ),

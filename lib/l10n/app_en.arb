@@ -49,5 +49,17 @@
   "expenses":"Expenses",
   "spendFrequency":"Spend Frequency",
   "recentTransactions":"Recent Transactions",
-  "seeAll":"See All"
+  "seeAll":"See All",
+  "seeOther": "See Other",
+  "description": "Description",
+  "wallet": "Wallet",
+  "shopping": "Shopping",
+  "subscription": "Subscription",
+  "food": "Food",
+  "transport": "Transportation",
+  "salary": "Salary",
+  "passiveIncome": "Passive Income",
+  "addNewWallet": "Add New Wallet",
+  "howMuch": "How much?",
+  "addAttachment": "Add attachment"
 }

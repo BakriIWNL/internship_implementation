@@ -7,8 +7,9 @@ import 'package:itcores_internship_project/core/components/sheet/sheet_informati
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_icons.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/features/log/data/item_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class IncomeScreen extends StatelessWidget {
   const IncomeScreen({super.key});
@@ -20,18 +21,18 @@ class IncomeScreen extends StatelessWidget {
       bottomSheet: LogBottomsheet(
           onChanged: () {},
           value: '0',
-          items: const <DropdownMenuItem<String>>[
+          items: <DropdownMenuItem<String>>[
             DropdownMenuItem(
-                value: '0', child: Text("Passive Income")),
+                value: '0', child: Text(AppLocalizations.of(context)!.passiveIncome)),
             DropdownMenuItem(
                 value: '1',
-                child: Text("Salary")),
+                child: Text(AppLocalizations.of(context)!.salary)),
           ],
-          controller: nameController, text: 'Add attachment', onPressed: (){
+          controller: nameController, text: AppLocalizations.of(context)!.addAttachment, onPressed: (){
             Box<ItemModel> itemBox = Hive.box<ItemModel>('items');
             itemBox.add(ItemModel(
-              reason: 'Reason', 
-              description: 'Description',
+              reason: AppStrings.reason, 
+              description: AppStrings.description,
               amount: 0, 
               dateTime: DateTime.now(), 
               expense: false,
@@ -58,7 +59,7 @@ class IncomeScreen extends StatelessWidget {
         title: Padding(
           padding: EdgeInsets.only(top: 25.h),
           child: Text(
-            "Income",
+            AppLocalizations.of(context)!.income,
             style: TextStyle(
               fontSize: 18.sp,
               fontWeight: FontWeight.w600,
@@ -69,7 +70,7 @@ class IncomeScreen extends StatelessWidget {
       body: SheetInformation(
         space: 100.h.toInt(),
         textColor: AppColors.greenSecondary,
-        type: "Income",
+        type: AppLocalizations.of(context)!.income,
       ),
     );
   }

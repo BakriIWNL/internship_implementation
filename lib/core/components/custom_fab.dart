@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hive/hive.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
+import 'package:itcores_internship_project/core/utils/user_model.dart';
 
 class CustomExpandableFab extends StatelessWidget {
   const CustomExpandableFab({super.key});
@@ -75,10 +77,15 @@ class CustomExpandableFab extends StatelessWidget {
               color: AppColors.bluePrimary,
               borderRadius: BorderRadius.all(Radius.circular(100.r)),
             ),
-            child: Icon(
-              Icons.close,
-              size: 40.sp,
-              color: AppColors.white,
+            child: IconButton(
+              icon: Icon(Icons.close,size: 40.sp,
+              color: AppColors.white,),
+              onPressed: (){
+                Box<UserModel> userBox = Hive.box<UserModel>('user');
+                UserModel user;
+                user = userBox.get("user") as UserModel;
+                debugPrint(user.accountAmounts.toString());
+              },
             ),
           ),
         ),

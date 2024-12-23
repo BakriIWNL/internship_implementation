@@ -4,13 +4,16 @@ class HomeState extends Equatable {
   final GenericStates state ;
   final int dateIndex;
   final int selectedNavItem;
-  const HomeState({this.state = GenericStates.initial, this.dateIndex = 0, this.selectedNavItem = 0});
+  final int value;
+  const HomeState({this.state = GenericStates.initial, this.dateIndex = 0, this.selectedNavItem = 0,this.value = 0});
 
   factory HomeState.initial() {
-    return const HomeState(
+    Box<UserModel> userBox = Hive.box<UserModel>('user');
+    return HomeState(
       state: GenericStates.initial,
       dateIndex: 0,
       selectedNavItem: 0,
+      value: int.tryParse(userBox.get("user")?.accountAmounts[0] ?? '0') ?? 0,
     );
   }
 
@@ -27,5 +30,5 @@ class HomeState extends Equatable {
   }
 
   @override
-  List<Object> get props => [dateIndex, selectedNavItem];
+  List<Object> get props => [dateIndex, selectedNavItem,value];
 }

@@ -24,13 +24,11 @@ class SignupCubit extends Cubit<SignupState> {
 
   void togglePasswordVisibility() {
     passwordVisible = !passwordVisible;
-    debugPrint('Password visibility: $passwordVisible');
     emit(state.copyWith(isPasswordVisible: passwordVisible));
   }
 
   void toggleCheckBox() {
     checkboxValue = !checkboxValue;
-    debugPrint('Checkbox value: $checkboxValue');
     emit(state.copyWith(isCheckboxChecked: checkboxValue));
   }
 

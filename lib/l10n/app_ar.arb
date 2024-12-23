@@ -49,5 +49,17 @@
   "expenses": "المصروفات",
   "spendFrequency": "تكرار الإنفاق",
   "recentTransactions": "المعاملات الأخيرة",
-  "seeAll": "عرض الكل"
+  "seeAll": "عرض الكل",
+  "seeOther": "عرض الآخر",
+  "description": "الوصف",
+  "wallet": "المحفظة",
+  "shopping": "التسوق",
+  "subscription": "الاشتراك",
+  "food": "الطعام",
+  "transport": "النقل",
+  "salary": "الراتب",
+  "passiveIncome": "الدخل السلبي",
+  "addNewWallet": "إضافة محفظة جديدة",
+  "howMuch": "كم؟",
+  "addAttachment": "إضافة مرفق"
 }

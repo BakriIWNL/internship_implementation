@@ -21,7 +21,7 @@ class SheetInformation extends StatelessWidget {
           children: [
             space.verticalSpace,
             Text(
-              SheetData().getSheetData()[type]!.header,
+              SheetData.getSheetData(context)[type]!.header,
               style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600,

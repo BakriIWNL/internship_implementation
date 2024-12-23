@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:itcores_internship_project/core/components/custom_fab.dart';
 import 'package:itcores_internship_project/core/themes/app_assets.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
+import 'package:itcores_internship_project/features/home/presentation/cubit/home_cubit.dart';
 import 'package:itcores_internship_project/features/home/presentation/widgets/bottomnavbar.dart';
 import 'package:itcores_internship_project/features/home/presentation/widgets/date_list.dart';
 import 'package:itcores_internship_project/features/home/presentation/widgets/home_appbar.dart';
@@ -52,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                 10.verticalSpace,
                 Center(
                   child: Text(
-                    "\$9400",
+                    "\$${context.read<HomeCubit>().state.value}",
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 40.sp,

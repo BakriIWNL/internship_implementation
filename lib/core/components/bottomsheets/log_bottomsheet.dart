@@ -56,7 +56,7 @@ class LogBottomsheet extends StatelessWidget {
                   SizedBox(
                     width: 343.w,
                     child: NewCustomTextField(
-                        hint: "Description",
+                        hint: AppLocalizations.of(context)!.description,
                         controller: controller,
                         validationType: AppLocalizations.of(context)!.name,
                         height: 56.h,
@@ -66,7 +66,7 @@ class LogBottomsheet extends StatelessWidget {
                   20.verticalSpace,
                   CustomDropdown(
                       items: items,
-                      hint: "Wallet",
+                      hint: AppLocalizations.of(context)!.wallet,
                       width: 343.w,
                       height: 56.h,
                       onChanged: (value) {}),

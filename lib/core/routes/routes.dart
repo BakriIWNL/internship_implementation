@@ -86,7 +86,7 @@ class Routes {
               )),
       GoRoute(
           path: RouteNames.letsSetup,
-          name: 'letsSetup',
+          name: 'letssetup',
           builder: (context, state) => BlocProvider(
                 create: (context) => SetupCubit(),
                 child: LetsSetup(pin: state.pathParameters['pin'] ?? ''),

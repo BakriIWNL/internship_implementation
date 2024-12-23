@@ -33,12 +33,12 @@ class CustomItem extends StatelessWidget {
                 height: 60.h,
                 width: 60.w,
                 decoration: BoxDecoration(
-                  color: ItemData.getItemMap()[reason]?.secondaryColor,
+                  color: ItemData.getItemMap(context)[reason]?.secondaryColor,
                   borderRadius: BorderRadius.circular(24.r),
                 ),
                 child: Center(
                   child: Image.asset(
-                    ItemData.getItemMap()[reason]!.icon,
+                    ItemData.getItemMap(context)[reason]!.icon,
                     height: 40.h,
                     width: 40.w,
                   ),
@@ -73,9 +73,9 @@ class CustomItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  ItemData.getItemMap()[reason]!.expense ? " - \$${amount.toString()}" : " + \$${amount.toString()}",
+                  ItemData.getItemMap(context)[reason]!.expense ? " - \$${amount.toString()}" : " + \$${amount.toString()}",
                   style: TextStyle(
-                    color: ItemData.getItemMap()[reason]!.expense ? AppColors.redPrimary : AppColors.greenPrimary,
+                    color: ItemData.getItemMap(context)[reason]!.expense ? AppColors.redPrimary : AppColors.greenPrimary,
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
                   ),
