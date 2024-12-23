@@ -29,65 +29,68 @@ class LogBottomsheet extends StatelessWidget {
     return BottomSheet(
       enableDrag: false,
       builder: (BuildContext context) {
-        return Padding(
-            padding: EdgeInsets.only(
-              bottom: MediaQuery.of(context).viewInsets.bottom / 2,
-            ),
-            child: Container(
-              height: 483.h,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40.r),
-                  color: AppColors.white),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  25.verticalSpace,
-                  SizedBox(
-                    width: 343.w,
-                    child: CustomDropdown(
+        return SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
+          child: Padding(
+              padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom / 2,
+              ),
+              child: Container(
+                height: 483.h,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(40.r),
+                    color: AppColors.white),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    25.verticalSpace,
+                    SizedBox(
+                      width: 343.w,
+                      child: CustomDropdown(
+                          items: items,
+                          hint: "Category",
+                          width: 343.w,
+                          height: 56.h,
+                          onChanged: (value) {}),
+                    ),
+                    20.verticalSpace,
+                    SizedBox(
+                      width: 343.w,
+                      child: NewCustomTextField(
+                          hint: AppLocalizations.of(context)!.description,
+                          controller: controller,
+                          validationType: AppLocalizations.of(context)!.name,
+                          height: 56.h,
+                          password: false,
+                          width: 343.w),
+                    ),
+                    20.verticalSpace,
+                    CustomDropdown(
                         items: items,
-                        hint: "Category",
+                        hint: AppLocalizations.of(context)!.wallet,
                         width: 343.w,
                         height: 56.h,
                         onChanged: (value) {}),
-                  ),
-                  20.verticalSpace,
-                  SizedBox(
-                    width: 343.w,
-                    child: NewCustomTextField(
-                        hint: AppLocalizations.of(context)!.description,
-                        controller: controller,
-                        validationType: AppLocalizations.of(context)!.name,
-                        height: 56.h,
-                        password: false,
-                        width: 343.w),
-                  ),
-                  20.verticalSpace,
-                  CustomDropdown(
-                      items: items,
-                      hint: AppLocalizations.of(context)!.wallet,
-                      width: 343.w,
-                      height: 56.h,
-                      onChanged: (value) {}),
-                  20.verticalSpace,
-                  CustomIconButton(
-                    icon: Icons.attachment,
-                    text: text,
-                    onPressed: () {},
-                    size: Size(343.w, 56.h),
-                    backgroundColor: AppColors.white,
-                    textColor: AppColors.greyText,
-                  ),
-                  const Spacer(),
-                  CustomButton(
-                      text: AppLocalizations.of(context)!.continueText,
-                      onPressed: onPressed,
-                      size: Size(343.w, 56.h)),
-                  20.verticalSpace,
-                ],
-              ),
-            ));
+                    20.verticalSpace,
+                    CustomIconButton(
+                      icon: Icons.attachment,
+                      text: text,
+                      onPressed: () {},
+                      size: Size(343.w, 56.h),
+                      backgroundColor: AppColors.white,
+                      textColor: AppColors.greyText,
+                    ),
+                    const Spacer(),
+                    CustomButton(
+                        text: AppLocalizations.of(context)!.continueText,
+                        onPressed: onPressed,
+                        size: Size(343.w, 56.h)),
+                    20.verticalSpace,
+                  ],
+                ),
+              )),
+        );
       },
       onClosing: () {},
     );

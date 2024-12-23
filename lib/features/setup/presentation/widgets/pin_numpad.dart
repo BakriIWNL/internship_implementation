@@ -19,6 +19,7 @@ class PinNumpad extends StatelessWidget {
             crossAxisCount: 3,
             childAspectRatio: 2,
           ),
+          physics: const NeverScrollableScrollPhysics(),
           itemCount: 12,
           itemBuilder: (context, index) {
             if (index == 9) {

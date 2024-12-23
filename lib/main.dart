@@ -5,15 +5,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/core/routes/routes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:itcores_internship_project/core/utils/user_model.dart';
+import 'package:itcores_internship_project/features/home/data/model/user_model.dart';
 import 'package:itcores_internship_project/cubit/language_cubit.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:itcores_internship_project/features/log/data/model/item_model.dart';
 
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized(); 
   await Hive.initFlutter();
   Hive.registerAdapter(UserModelAdapter());
   Hive.openBox<UserModel>('user');
+  Hive.openBox<ItemModel>('items');
 
   runApp(const MyApp());
 }

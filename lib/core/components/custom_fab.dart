@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hive/hive.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
-import 'package:itcores_internship_project/core/utils/user_model.dart';
+import 'package:itcores_internship_project/features/home/data/model/user_model.dart';
 
 class CustomExpandableFab extends StatelessWidget {
   const CustomExpandableFab({super.key});

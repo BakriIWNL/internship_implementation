@@ -10,7 +10,7 @@ import 'package:itcores_internship_project/core/themes/app_assets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
-import 'package:itcores_internship_project/core/utils/user_model.dart';
+import 'package:itcores_internship_project/features/home/data/model/user_model.dart';
 import 'package:itcores_internship_project/features/setup/data/value_bank_map.dart';
 import 'package:itcores_internship_project/features/setup/presentation/cubit/bottom_sheet/bottomsheet_cubit.dart';
 
@@ -51,6 +51,7 @@ class BankBottomsheet extends StatelessWidget {
       enableDrag: false,
       builder: (BuildContext context) {
         return SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
           child: Padding(
               padding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).viewInsets.bottom / 2,

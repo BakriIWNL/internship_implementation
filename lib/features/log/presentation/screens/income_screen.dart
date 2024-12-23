@@ -8,7 +8,7 @@ import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_icons.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
-import 'package:itcores_internship_project/features/log/data/item_model.dart';
+import 'package:itcores_internship_project/features/log/data/model/item_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class IncomeScreen extends StatelessWidget {
