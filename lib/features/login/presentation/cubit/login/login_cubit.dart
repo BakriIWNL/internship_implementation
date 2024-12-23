@@ -21,7 +21,6 @@ class LoginCubit extends Cubit<LoginState> {
 
   void togglePasswordVisibility() {
     passwordVisible = !passwordVisible;
-    debugPrint('Password visibility: $passwordVisible');
     emit(state.copyWith(isPasswordVisible: passwordVisible));
   }
 }

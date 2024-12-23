@@ -4,16 +4,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/components/bottomsheets/bank_bottomsheet.dart';
 import 'package:itcores_internship_project/core/components/bottomsheets/default_bottomsheet.dart';
-import 'package:itcores_internship_project/core/components/sheet_information.dart';
+import 'package:itcores_internship_project/core/components/sheet/sheet_information.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
-import 'package:itcores_internship_project/core/utils/app_colors.dart';
+import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:itcores_internship_project/core/utils/enums.dart';
 import 'package:itcores_internship_project/features/setup/presentation/cubit/bottom_sheet/bottomsheet_cubit.dart';
 
 class NewAccount extends StatelessWidget {
-  const NewAccount({super.key});
+  const NewAccount({super.key, required this.pin});
+  final String pin;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class NewAccount extends StatelessWidget {
         builder: (context, state) {
           if (state.state == BottomSheetStates.bank) {
             return BankBottomsheet(
+              pin: pin,
               height: state.height,
               onChanged: (value) =>
                   context.read<BottomsheetCubit>().selectedOption(value),
@@ -81,8 +83,10 @@ class NewAccount extends StatelessWidget {
       body: BlocBuilder<BottomsheetCubit, BottomsheetState>(
         builder: (context, state) {
           return SheetInformation(
+            textColor: AppColors.purpleTertiary,
             space:
                 (580 - context.read<BottomsheetCubit>().state.height).toInt(),
+            type: AppLocalizations.of(context)!.balance,
           );
         },
       ),

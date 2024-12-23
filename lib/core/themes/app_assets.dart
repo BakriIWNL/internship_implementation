@@ -11,4 +11,5 @@ class AppAssets {
   static const String mandiri = 'assets/images/mandiri.png';
   static const String bca = 'assets/images/BCA.png';
   static const String jago = 'assets/images/jago.png';
+  static const String graph = 'assets/images/graph.png';
 }
