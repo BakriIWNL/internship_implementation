@@ -5,9 +5,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
 
 class FakeExample extends StatelessWidget {
-  // final List<String> items;
-
-  // ListData({required this.items});
+  const FakeExample({super.key});
 
   @override
   Widget build(BuildContext context) {

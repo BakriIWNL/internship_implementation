@@ -38,7 +38,7 @@ class NewCustomTextField extends StatelessWidget {
             fontSize: 16.sp,
             color: AppColors.blackText,
             fontWeight: FontWeight.w400),
-        validator: ValidationConditions.validator[validationType],
+        validator: (value) => ValidationConditions.validator[validationType]?.call(value, context),
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.r),

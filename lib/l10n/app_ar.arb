@@ -61,5 +61,15 @@
   "passiveIncome": "الدخل السلبي",
   "addNewWallet": "إضافة محفظة جديدة",
   "howMuch": "كم؟",
-  "addAttachment": "إضافة مرفق"
+  "addAttachment": "إضافة مرفق",
+  "category": "التصنيف",
+  "emailEmpty": "البريد الإلكتروني فارغ!",
+  "passwordEmpty": "كلمة المرور فارغة!",
+  "nameEmpty": "الاسم فارغ!",
+  "emailInvalid": "البريد الإلكتروني غير صالح!",
+  "passwordLength": "كلمة المرور يجب أن تكون 8 أحرف على الأقل!",
+  "passwordOneUppercase": "كلمة المرور يجب أن تحتوي على حرف كبير واحد على الأقل!",
+  "passwordOneLowercase": "كلمة المرور يجب أن تحتوي على حرف صغير واحد على الأقل!",
+  "passwordOneNumber": "كلمة المرور يجب أن تحتوي على رقم واحد على الأقل!",
+  "passwordOneSpecial": "كلمة المرور يجب أن تحتوي على حرف خاص واحد على الأقل!"
 }

@@ -124,7 +124,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 10.verticalSpace,
-                Center(child: FakeExample()),
+                const Center(child: FakeExample()),
               ],
             ),
           ),

@@ -38,6 +38,7 @@ class AppStrings {
   static const String mandiri = "Mandiri";
   static const String bca = "BCA";
   static const String expense = "Expense";
+  static const String expenses = "Expense";
   static const String description = "Description";
   static const String reason = "Reason";
   static const String shopping = "Shopping";
@@ -49,4 +50,7 @@ class AppStrings {
   static const String income = "Income";
   static const String itemHiveBox = "item";
   static const String subscription = "Subscription";
+  static const String balance = "Balance";
+  static const String emailSent = "Email Sent";
+  static const String enterPin = "Enter Pin";
 }

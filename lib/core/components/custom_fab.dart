@@ -5,7 +5,8 @@ import 'package:go_router/go_router.dart';
 import 'package:hive/hive.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
-import 'package:itcores_internship_project/features/home/data/model/user_model.dart';
+import 'package:itcores_internship_project/core/model/user_model.dart';
+import 'package:itcores_internship_project/core/utils/app_strings.dart';
 
 class CustomExpandableFab extends StatelessWidget {
   const CustomExpandableFab({super.key});
@@ -57,7 +58,7 @@ class CustomExpandableFab extends StatelessWidget {
             height: 56.sp,
             decoration: BoxDecoration(
               color: AppColors.greenPrimary,
-              borderRadius: BorderRadius.all(Radius.circular(100.r)),
+              borderRadius: BorderRadius.all(Radius.circular(10.r)),
             ),
             child: IconButton(
               icon: Icon(Icons.close,size: 40.sp,
@@ -81,9 +82,9 @@ class CustomExpandableFab extends StatelessWidget {
               icon: Icon(Icons.close,size: 40.sp,
               color: AppColors.white,),
               onPressed: (){
-                Box<UserModel> userBox = Hive.box<UserModel>('user');
+                Box<UserModel> userBox = Hive.box<UserModel>(AppStrings.userHiveBox);
                 UserModel user;
-                user = userBox.get("user") as UserModel;
+                user = userBox.get(AppStrings.userHiveBox) as UserModel;
                 debugPrint(user.accountAmounts.toString());
               },
             ),

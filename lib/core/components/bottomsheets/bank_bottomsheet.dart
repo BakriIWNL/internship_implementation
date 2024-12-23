@@ -10,8 +10,8 @@ import 'package:itcores_internship_project/core/themes/app_assets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
-import 'package:itcores_internship_project/features/home/data/model/user_model.dart';
-import 'package:itcores_internship_project/features/setup/data/value_bank_map.dart';
+import 'package:itcores_internship_project/core/model/user_model.dart';
+import 'package:itcores_internship_project/features/setup/data/model/value_bank_model.dart';
 import 'package:itcores_internship_project/features/setup/presentation/cubit/bottom_sheet/bottomsheet_cubit.dart';
 
 class BankBottomsheet extends StatelessWidget {
@@ -74,7 +74,7 @@ class BankBottomsheet extends StatelessWidget {
                         child: NewCustomTextField(
                             hint: AppLocalizations.of(context)!.name,
                             controller: controller,
-                            validationType: AppLocalizations.of(context)!.name,
+                            validationType: AppStrings.name,
                             height: 56.h,
                             password: false,
                             width: 343.w),
@@ -162,7 +162,7 @@ class BankBottomsheet extends StatelessWidget {
                                                       .read<BottomsheetCubit>()
                                                       .seeOther ==
                                                   false)
-                                          ? Text("See Other",
+                                          ? Text(AppLocalizations.of(context)!.seeOther,
                                               style: TextStyle(
                                                   color: AppColors.purplePrimary,
                                                   fontSize: 13.sp,
@@ -181,12 +181,12 @@ class BankBottomsheet extends StatelessWidget {
                       CustomButton(
                           text: AppLocalizations.of(context)!.continueText,
                           onPressed: () async {
-                            Box<UserModel> userBox = Hive.box<UserModel>('user');
+                            Box<UserModel> userBox = Hive.box<UserModel>(AppStrings.userHiveBox);
                             UserModel user = UserModel(pinNumber: pin,
                              accountNames: [context.read<BottomsheetCubit>().nameController.text], 
-                             accountTypes: [ValueBankMap.valueBank[context.read<BottomsheetCubit>().value] ?? ''], 
+                             accountTypes: [ValueBankModel.valueBank[context.read<BottomsheetCubit>().value] ?? ''], 
                              accountAmounts: ["10000"]);
-                            await userBox.put("user", user);
+                            await userBox.put(AppStrings.userHiveBox, user);
                             if (context.mounted) {
                               context.goNamed(AppStrings.home);
                             }
