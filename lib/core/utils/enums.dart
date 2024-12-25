@@ -6,4 +6,4 @@ enum UserStates{initial, loading, success, error}
 
 enum BottomSheetStates{initial, bank, creditCard, debitCard}
 
-enum CameraStatus { initializing, available, failed }
+enum CameraStatus { initializing, working ,success,failed }

@@ -1,24 +1,22 @@
 part of 'camera_cubit.dart';
 
 class CameraState extends Equatable {
+  final File? image;
   final CameraStatus status;
-  final List<CameraDescription>? cameras;
 
-  const CameraState({required this.status, this.cameras});
+  const CameraState({required this.image, required this.status});
 
-  factory CameraState.initial() =>
-      const CameraState(status: CameraStatus.initializing);
+  factory CameraState.initial() {
+    return const CameraState(image: null, status: CameraStatus.initializing);
+  }
 
-  CameraState copyWith({
-    CameraStatus? status,
-    List<CameraDescription>? cameras,
-  }) {
+  CameraState copyWith({File? image, CameraStatus? status}) {
     return CameraState(
+      image: image ?? this.image,
       status: status ?? this.status,
-      cameras: cameras ?? this.cameras,
     );
   }
 
   @override
-  List<Object?> get props => [status, cameras];
+  List<Object?> get props => [image, status]; 
 }

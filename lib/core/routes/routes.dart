@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:itcores_internship_project/core/components/camera.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
-import 'package:itcores_internship_project/cubits/camera_cubit/camera_cubit.dart';
 import 'package:itcores_internship_project/features/home/presentation/cubit/home_cubit.dart';
 import 'package:itcores_internship_project/features/home/presentation/screens/home_screen.dart';
 import 'package:itcores_internship_project/features/log/presentation/cubit/item_cubit.dart';
@@ -125,19 +123,6 @@ class Routes {
                 create: (context) => getIt<ItemCubit>(),
                 child: const ExpenseScreen(),
               )),
-      GoRoute(
-        path: RouteNames.camera,
-        name: AppStrings.camera,
-        builder: (context, state) => BlocProvider(
-          create: (context) {
-            // Idk why cameracubit.initializecamera() alone doesnt work, had to do this work around
-            final cubit = CameraCubit();
-            cubit.initializeCamera();
-            return cubit;
-          },
-          child: const CameraPage(),
-        ),
-      )
     ],
   );
 }

@@ -30,14 +30,6 @@ class ExpenseScreen extends StatelessWidget {
         controller: nameController,
         text: AppLocalizations.of(context)!.addAttachment,
         onPressed: () {
-          // Box<ItemModel> itemBox = Hive.box<ItemModel>('items');
-          // itemBox.add(ItemModel(
-          //   reason: 'Reason',
-          //   description: 'Description',
-          //   amount: 0,
-          //   dateTime: DateTime.now(),
-          //   expense: false,
-          // ));
         },
         categoryValue: context.read<ItemCubit>().categoryValue,
         categoryOnChanged: (String? value) {context.read<ItemCubit>().updateCategoryDropDown(value!);},
