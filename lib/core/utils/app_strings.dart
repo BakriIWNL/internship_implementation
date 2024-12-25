@@ -53,4 +53,5 @@ class AppStrings {
   static const String balance = "Balance";
   static const String emailSent = "Email Sent";
   static const String enterPin = "Enter Pin";
+  static const String camera = "camera";
 }

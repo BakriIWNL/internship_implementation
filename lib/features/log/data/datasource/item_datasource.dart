@@ -3,11 +3,15 @@ import 'package:itcores_internship_project/features/log/data/model/item_model.da
 import 'package:itcores_internship_project/features/log/data/repository/item_repository.dart';
 
 class ItemDatasource implements ItemRepository{
+
+  final Box<ItemModel> _itemBox;
+
+  ItemDatasource(this._itemBox);
+
   @override
   Future<String> addItem({required ItemModel item}) async {
     try {
-      Box<ItemModel> itemBox = Hive.box<ItemModel>("items");
-      await itemBox.add(item);
+      await _itemBox.add(item);
       return "Done";
     }
     catch(e){
@@ -19,8 +23,7 @@ class ItemDatasource implements ItemRepository{
   @override
   Future<List<ItemModel>> getItems() async {
     try {
-      Box<ItemModel> itemBox = Hive.box<ItemModel>("items");
-      return itemBox.values.toList();
+      return _itemBox.values.toList();
     }
     catch(e){
       return [];

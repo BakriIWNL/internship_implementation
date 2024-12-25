@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/components/custom_button.dart';
 import 'package:itcores_internship_project/core/components/custom_dropdown.dart';
 import 'package:itcores_internship_project/core/components/customtextfield.dart';
@@ -9,8 +10,10 @@ import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/features/log/presentation/widgets/custom_icon_button.dart';
 
 class LogBottomsheet extends StatelessWidget {
-  final Function onChanged;
-  final String value;
+  final ValueChanged<String?> categoryOnChanged;
+  final ValueChanged<String?> walletOnChanged;
+  final String categoryValue;
+  final String walletValue;
   final Function onPressed;
   final List<DropdownMenuItem<String>> items;
   final TextEditingController controller;
@@ -19,8 +22,10 @@ class LogBottomsheet extends StatelessWidget {
   const LogBottomsheet(
       {super.key,
       required this.text,
-      required this.onChanged,
-      required this.value,
+      required this.categoryOnChanged,
+      required this.walletOnChanged,
+      required this.categoryValue,
+      required this.walletValue,
       required this.items,
       required this.controller,
       required this.onPressed});
@@ -49,11 +54,12 @@ class LogBottomsheet extends StatelessWidget {
                     SizedBox(
                       width: 343.w,
                       child: CustomDropdown(
+                        value: categoryValue,
                           items: items,
                           hint: AppLocalizations.of(context)!.category,
                           width: 343.w,
                           height: 56.h,
-                          onChanged: (value) {}),
+                          onChanged: categoryOnChanged),
                     ),
                     20.verticalSpace,
                     SizedBox(
@@ -69,15 +75,18 @@ class LogBottomsheet extends StatelessWidget {
                     20.verticalSpace,
                     CustomDropdown(
                         items: items,
+                        value: walletValue,
                         hint: AppLocalizations.of(context)!.wallet,
                         width: 343.w,
                         height: 56.h,
-                        onChanged: (value) {}),
+                        onChanged: walletOnChanged),
                     20.verticalSpace,
                     CustomIconButton(
                       icon: Icons.attachment,
                       text: text,
-                      onPressed: () {},
+                      onPressed: () {
+                        context.goNamed(AppStrings.camera);
+                      },
                       size: Size(343.w, 56.h),
                       backgroundColor: AppColors.white,
                       textColor: AppColors.greyText,
