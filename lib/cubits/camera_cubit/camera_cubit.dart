@@ -9,8 +9,9 @@ part 'camera_state.dart';
 class CameraCubit extends Cubit<CameraState> {
   CameraCubit() : super(CameraState.initial());
 
-  final _cameraController = StreamController<CameraController?>();
-  Stream<CameraController?> get cameraStream => _cameraController.stream;
+  CameraController? _cameraController;
+
+  CameraController? get cameraController => _cameraController;
 
   Future<void> initializeCamera() async {
     try {
@@ -18,31 +19,30 @@ class CameraCubit extends Cubit<CameraState> {
       final cameras = await availableCameras();
       final firstCamera = cameras.first;
 
-      final controller = CameraController(
+      _cameraController = CameraController(
         firstCamera,
         ResolutionPreset.high,
       );
 
-      await controller.initialize();
+      await _cameraController!.initialize();
 
       emit(state.copyWith(status: CameraStatus.available, cameras: cameras));
-      _cameraController.add(controller);
     } catch (e) {
       emit(state.copyWith(status: CameraStatus.failed));
     }
   }
 
   Future<void> takePicture() async {
-    final controller = await cameraStream.first;
-    if (controller != null && controller.value.isInitialized) {
-      await controller.takePicture();
+    if (_cameraController != null && _cameraController!.value.isInitialized) {
+      await _cameraController!.takePicture();
+    } else {
+      throw StateError('CameraController is not initialized');
     }
   }
 
   @override
   Future<void> close() async {
-    final controller = await cameraStream.first;
-    await controller?.dispose();
+    await _cameraController?.dispose();
     return super.close();
   }
 }

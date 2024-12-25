@@ -15,39 +15,42 @@ class CameraPage extends StatelessWidget {
           case CameraStatus.initializing:
             return const Center(child: CircularProgressIndicator());
           case CameraStatus.available:
-            return FutureBuilder<CameraController?>(
-              future: BlocProvider.of<CameraCubit>(context).cameraStream.first,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done && snapshot.hasData) {
-                  final controller = snapshot.data!;
-                  return Stack(
-                    children: [
-                      CameraPreview(controller),
-                      Align(
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            await BlocProvider.of<CameraCubit>(context).takePicture();
+            final controller = context.read<CameraCubit>().cameraController;
+            if (controller != null && controller.value.isInitialized) {
+              return Scaffold(
+                body: Stack(
+                  children: [
+                    CameraPreview(controller),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: ElevatedButton(
+                        onPressed: () async {
+                          try {
+                            await context.read<CameraCubit>().takePicture();
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(content: Text('Picture taken!')),
                             );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            shape: const CircleBorder(),
-                            padding: const EdgeInsets.all(16),
-                            backgroundColor: Colors.blue,
-                          ),
-                          child: const Icon(Icons.camera, size: 32, color: Colors.white),
+                          } catch (e) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('Error: $e')),
+                            );
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(
+                          shape: const CircleBorder(),
+                          padding: const EdgeInsets.all(16),
+                          backgroundColor: Colors.blue,
                         ),
+                        child: const Icon(Icons.camera,
+                            size: 32, color: Colors.white),
                       ),
-                    ],
-                  );
-                } else if (snapshot.hasError) {
-                  return const Center(child: Text('Error loading camera'));
-                } else {
-                  return const Center(child: CircularProgressIndicator());
-                }
-              },
-            );
+                    ),
+                  ],
+                ),
+              );
+            } else {
+              return const Center(child: Text('Camera not ready'));
+            }
           case CameraStatus.failed:
             return const Center(child: Text('Error initializing camera'));
         }
