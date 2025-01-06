@@ -20,7 +20,7 @@ class NavBar extends StatelessWidget {
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           return BottomAppBar(
-            color: AppColors.bottomNavBar,
+            color: AppColors.black,
             shape: const CircularNotchedRectangle(),
             elevation: 0.0,
             height: 69.h,

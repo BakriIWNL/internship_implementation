@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
+import 'package:itcores_internship_project/cubits/camera_cubit/camera_cubit.dart';
 import 'package:itcores_internship_project/features/home/presentation/cubit/home_cubit.dart';
 import 'package:itcores_internship_project/features/home/presentation/screens/home_screen.dart';
 import 'package:itcores_internship_project/features/log/presentation/cubit/item_cubit.dart';
@@ -105,15 +106,29 @@ class Routes {
       GoRoute(
           path: RouteNames.home,
           name: AppStrings.home,
-          builder: (context, state) => BlocProvider(
+          builder: (context, state) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
                 create: (context) => HomeCubit(),
+              ),
+              BlocProvider(
+                create: (context) => getIt<ItemCubit>(),
+              ),
+            ],
                 child: const HomeScreen(),
               )),
       GoRoute(
           path: RouteNames.income,
           name: AppStrings.income,
-          builder: (context, state) => BlocProvider(
-                create: (context) => getIt<ItemCubit>(),
+          builder: (context, state) => MultiBlocProvider(
+                providers: [
+                  BlocProvider(
+                    create: (context) => getIt<ItemCubit>(),
+                  ),
+                  BlocProvider(
+                    create: (context) => CameraCubit(),
+                  ),
+                ],
                 child: const IncomeScreen(),
               )),
       GoRoute(

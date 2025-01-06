@@ -28,7 +28,8 @@ class BankBottomsheet extends StatelessWidget {
       required this.value,
       required this.items,
       required this.controller,
-      required this.height, this.pin= ''});
+      required this.height,
+      this.pin = ''});
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +110,8 @@ class BankBottomsheet extends StatelessWidget {
                         height: 150.h,
                         width: 344.w,
                         child: GridView.builder(
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 4,
                             crossAxisSpacing: 10.w,
                             mainAxisSpacing: 10.h,
@@ -141,11 +143,13 @@ class BankBottomsheet extends StatelessWidget {
                                                 color: AppColors.purplePrimary))
                                         : (index == 7 &&
                                                 context
-                                                        .read<BottomsheetCubit>()
+                                                        .read<
+                                                            BottomsheetCubit>()
                                                         .seeOther ==
                                                     false)
                                             ? BoxDecoration(
-                                                color: AppColors.purpleSecondary,
+                                                color:
+                                                    AppColors.purpleSecondary,
                                                 borderRadius:
                                                     BorderRadius.circular(8.r),
                                                 border: Border.all(
@@ -162,9 +166,12 @@ class BankBottomsheet extends StatelessWidget {
                                                       .read<BottomsheetCubit>()
                                                       .seeOther ==
                                                   false)
-                                          ? Text(AppLocalizations.of(context)!.seeOther,
+                                          ? Text(
+                                              AppLocalizations.of(context)!
+                                                  .seeOther,
                                               style: TextStyle(
-                                                  color: AppColors.purplePrimary,
+                                                  color:
+                                                      AppColors.purplePrimary,
                                                   fontSize: 13.sp,
                                                   fontWeight: FontWeight.w500))
                                           : Image.asset(images[index],
@@ -177,21 +184,31 @@ class BankBottomsheet extends StatelessWidget {
                           },
                         ),
                       ),
-                      10.verticalSpace,
+                      const Spacer(),
                       CustomButton(
                           text: AppLocalizations.of(context)!.continueText,
                           onPressed: () async {
-                            Box<UserModel> userBox = Hive.box<UserModel>(AppStrings.userHiveBox);
-                            UserModel user = UserModel(pinNumber: pin,
-                             accountNames: [context.read<BottomsheetCubit>().nameController.text], 
-                             accountTypes: [ValueBankModel.valueBank[context.read<BottomsheetCubit>().value] ?? ''], 
-                             accountAmounts: ["10000"]);
+                            Box<UserModel> userBox =
+                                Hive.box<UserModel>(AppStrings.userHiveBox);
+                            UserModel user =
+                                UserModel(pinNumber: pin, accountNames: [
+                              context
+                                  .read<BottomsheetCubit>()
+                                  .nameController
+                                  .text
+                            ], accountTypes: [
+                              ValueBankModel.valueBank[
+                                      context.read<BottomsheetCubit>().value] ??
+                                  ''
+                            ], accountAmounts: [
+                              "10000"
+                            ]);
                             await userBox.put(AppStrings.userHiveBox, user);
                             if (context.mounted) {
                               context.goNamed(AppStrings.home);
                             }
                           },
-                          size: Size(343.w, 56.h))
+                          size: Size(343.w, 56.h)),
                     ],
                   ),
                 ),

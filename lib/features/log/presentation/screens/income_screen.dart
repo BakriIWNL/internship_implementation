@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,8 +8,8 @@ import 'package:itcores_internship_project/core/components/sheet/sheet_informati
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_icons.dart';
-import 'package:itcores_internship_project/core/utils/app_strings.dart';
 import 'package:itcores_internship_project/core/utils/enums.dart';
+import 'package:itcores_internship_project/cubits/camera_cubit/camera_cubit.dart';
 import 'package:itcores_internship_project/features/log/data/model/item_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:itcores_internship_project/features/log/presentation/cubit/item_cubit.dart';
@@ -39,16 +40,18 @@ class IncomeScreen extends StatelessWidget {
             text: AppLocalizations.of(context)!.addAttachment,
             onPressed: () {
               ItemModel item = ItemModel(
-                reason: AppStrings.income,
+                reason: AppLocalizations.of(context)!.salary,
                 description: context.read<ItemCubit>().nameController.text,
-                amount: 1000,
+                amount: Random().nextInt(1000),
                 dateTime: DateTime.now(),
                 expense: false,
+                imagePath: context.read<CameraCubit>().state.image.toString(),
               );
+              // debugPrint(context.read<CameraCubit>().state.image.toString());
               context.read<ItemCubit>().addItem(item);
               if (state.state == GenericStates.success) {
                 context.read<ItemCubit>().getItems().then((items) {
-                  debugPrint(items[items.length - 1].description);
+                  debugPrint(items[items.length - 1].imagePath.toString());
                 });
               }
               if (state.state == GenericStates.error) {

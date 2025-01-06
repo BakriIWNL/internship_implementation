@@ -120,6 +120,7 @@ class LogBottomsheet extends StatelessWidget {
                                     Align(
                                       alignment: Alignment.topRight,
                                       child: IconButton(
+                                        color: AppColors.white,
                                         icon: const Icon(Icons.close),
                                         onPressed: () {
                                           context

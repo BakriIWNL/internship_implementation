@@ -21,6 +21,7 @@ Future main() async{
   Hive.registerAdapter(UserModelAdapter());
   Hive.registerAdapter(ItemModelAdapter());
   final itemBox = await Hive.openBox<ItemModel>('items'); 
+  itemBox.clear();
   getIt.registerLazySingleton(() => itemBox);
   Hive.openBox<UserModel>('user');
   getIt.registerLazySingleton<ItemRepository>(() => ItemDatasource(getIt()));
