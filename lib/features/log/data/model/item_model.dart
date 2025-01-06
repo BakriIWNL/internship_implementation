@@ -14,7 +14,8 @@ class ItemModel {
   final DateTime dateTime;
   @HiveField(4)
   final bool expense;
-  // final String image;
+  @HiveField(5)
+  final String? imagePath;
 
-  ItemModel({required this.reason, required this.description, required this.amount,required this.dateTime, required this.expense});
+  ItemModel({required this.reason, required this.description, required this.amount,required this.dateTime, required this.expense,this.imagePath});
 }

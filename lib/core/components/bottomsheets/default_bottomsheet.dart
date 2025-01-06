@@ -5,6 +5,7 @@ import 'package:itcores_internship_project/core/components/custom_dropdown.dart'
 import 'package:itcores_internship_project/core/components/customtextfield.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:itcores_internship_project/core/utils/app_strings.dart';
 
 class DefaultBottomSheet extends StatelessWidget {
   
@@ -43,7 +44,7 @@ class DefaultBottomSheet extends StatelessWidget {
                   child: NewCustomTextField(
                       hint: AppLocalizations.of(context)!.name,
                       controller: controller,
-                      validationType: AppLocalizations.of(context)!.name,
+                      validationType: AppStrings.name,
                       height: 56.h,
                       password: false,
                       width: 343.w),

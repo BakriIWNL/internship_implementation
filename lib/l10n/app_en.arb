@@ -61,5 +61,15 @@
   "passiveIncome": "Passive Income",
   "addNewWallet": "Add New Wallet",
   "howMuch": "How much?",
-  "addAttachment": "Add attachment"
+  "addAttachment": "Add attachment",
+  "category": "Category",
+  "emailEmpty": "Email is Empty!",
+  "passwordEmpty": "Password is Empty!",
+  "nameEmpty": "Name is Empty!",
+  "emailInvalid": "Enter a Valid Email",
+  "passwordOneUppercase": "Password Must Contain One Uppercase Letter",
+  "passwordOneLowercase": "Password Must Contain One Lowercase Letter",
+  "passwordOneNumber": "Password Must Contain One Number",
+  "passwordOneSpecial": "Password Must Contain One Special Character",
+  "passwordLength": "Password Must Be 8 Characters Or Longer"
 }

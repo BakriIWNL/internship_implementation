@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_icons.dart';
-import 'package:itcores_internship_project/cubit/language_cubit.dart';
+import 'package:itcores_internship_project/cubits/language_cubit/language_cubit.dart';
 import 'package:itcores_internship_project/features/signup/presentation/widgets/checkbox.dart';
 import 'package:itcores_internship_project/features/signup/presentation/widgets/signup_buttons.dart';
 import 'package:itcores_internship_project/features/signup/presentation/widgets/signup_text_fields.dart';

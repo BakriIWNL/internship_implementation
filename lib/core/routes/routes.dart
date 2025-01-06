@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/routes/route_names.dart';
+import 'package:itcores_internship_project/core/utils/app_strings.dart';
+import 'package:itcores_internship_project/cubits/camera_cubit/camera_cubit.dart';
 import 'package:itcores_internship_project/features/home/presentation/cubit/home_cubit.dart';
 import 'package:itcores_internship_project/features/home/presentation/screens/home_screen.dart';
+import 'package:itcores_internship_project/features/log/presentation/cubit/item_cubit.dart';
+import 'package:itcores_internship_project/features/log/presentation/screens/expense_screen.dart';
 import 'package:itcores_internship_project/features/log/presentation/screens/income_screen.dart';
 import 'package:itcores_internship_project/features/login/presentation/cubit/forgot_password/forgotpassword_cubit.dart';
 import 'package:itcores_internship_project/features/login/presentation/cubit/login/login_cubit.dart';
@@ -21,6 +25,7 @@ import 'package:itcores_internship_project/features/setup/presentation/screens/n
 import 'package:itcores_internship_project/features/signup/presentation/cubits/signup/signup_cubit.dart';
 import 'package:itcores_internship_project/features/setup/presentation/screens/enter_pin_screen.dart';
 import 'package:itcores_internship_project/features/signup/presentation/screens/signup_screen.dart';
+import 'package:itcores_internship_project/main.dart';
 
 class Routes {
   static GoRouter routes = GoRouter(
@@ -54,61 +59,85 @@ class Routes {
       ),
       GoRoute(
           path: RouteNames.login,
-          name: 'login',
+          name: AppStrings.logIn,
           builder: (context, state) => BlocProvider(
                 create: (context) => LoginCubit(),
                 child: LogInScreen(),
               )),
       GoRoute(
           path: RouteNames.signUp,
-          name: 'signUp',
+          name: AppStrings.signUp,
           builder: (context, state) => BlocProvider(
                 create: (context) => SignupCubit(),
                 child: SignUpScreen(),
               )),
       GoRoute(
           path: RouteNames.forgotPassword,
-          name: 'forgotPassword',
+          name: AppStrings.forgotPassword,
           builder: (context, state) => BlocProvider(
                 create: (context) => ForgotpasswordCubit(),
                 child: ForgotPasswordScreen(),
               )),
       GoRoute(
           path: RouteNames.emailSent,
-          name: 'emailSent',
+          name: AppStrings.emailSent,
           builder: (context, state) => const EmailSent()),
       GoRoute(
           path: RouteNames.enterPin,
-          name: 'enterPin',
+          name: AppStrings.enterPin,
           builder: (context, state) => BlocProvider(
                 create: (context) => SetupCubit(),
                 child: const EnterPinScreen(),
               )),
       GoRoute(
           path: RouteNames.letsSetup,
-          name: 'letssetup',
+          name: AppStrings.letsSetup,
           builder: (context, state) => BlocProvider(
                 create: (context) => SetupCubit(),
                 child: LetsSetup(pin: state.pathParameters['pin'] ?? ''),
               )),
       GoRoute(
           path: RouteNames.newAccount,
-          name: 'newAccount',
+          name: AppStrings.newAccount,
           builder: (context, state) => BlocProvider(
                 create: (context) => BottomsheetCubit(),
                 child: NewAccount(pin: state.pathParameters['pin'] ?? ''),
               )),
       GoRoute(
           path: RouteNames.home,
-          name: 'home',
-          builder: (context, state) => BlocProvider(
+          name: AppStrings.home,
+          builder: (context, state) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
                 create: (context) => HomeCubit(),
+              ),
+              BlocProvider(
+                create: (context) => getIt<ItemCubit>(),
+              ),
+            ],
                 child: const HomeScreen(),
               )),
       GoRoute(
           path: RouteNames.income,
-          name: 'income',
-          builder: (context, state) => const IncomeScreen()),
+          name: AppStrings.income,
+          builder: (context, state) => MultiBlocProvider(
+                providers: [
+                  BlocProvider(
+                    create: (context) => getIt<ItemCubit>(),
+                  ),
+                  BlocProvider(
+                    create: (context) => CameraCubit(),
+                  ),
+                ],
+                child: const IncomeScreen(),
+              )),
+      GoRoute(
+          path: RouteNames.expense,
+          name: AppStrings.expense,
+          builder: (context, state) => BlocProvider(
+                create: (context) => getIt<ItemCubit>(),
+                child: const ExpenseScreen(),
+              )),
     ],
   );
 }

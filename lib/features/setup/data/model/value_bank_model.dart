@@ -1,6 +1,6 @@
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
 
-class ValueBankMap {
+class ValueBankModel {
   static const Map<String, String> valueBank = {
     "0": AppStrings.chase,
     "1": AppStrings.paypal,

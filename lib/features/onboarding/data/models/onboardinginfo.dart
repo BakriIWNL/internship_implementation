@@ -12,18 +12,18 @@ class OnBoardingInfo {
   static List<OnBoardingInfo> getOnBoardingInfoList(BuildContext context) {
     return [
       OnBoardingInfo(
-        title: context.Localizations.gainTotal,
-        subTitle: context.Localizations.gainTotalSub,
+        title: context.localizations.gainTotal,
+        subTitle: context.localizations.gainTotalSub,
         imagePath: AppAssets.gaincontrol,
       ),
       OnBoardingInfo(
-        title: context.Localizations.knowWhere,
-        subTitle: context.Localizations.knowWhereSub,
+        title: context.localizations.knowWhere,
+        subTitle: context.localizations.knowWhereSub,
         imagePath: AppAssets.knowwhere,
       ),
       OnBoardingInfo(
-        title: context.Localizations.planningAhead,
-        subTitle: context.Localizations.planningAheadSub,
+        title: context.localizations.planningAhead,
+        subTitle: context.localizations.planningAheadSub,
         imagePath: AppAssets.planningahead,
       ),
     ];
@@ -32,5 +32,5 @@ class OnBoardingInfo {
 
 // Create a context extension for easier access to AppLocalizations
 extension AppLocalizationsExtensions on BuildContext {
-  AppLocalizations get Localizations => AppLocalizations.of(this)!;
+  AppLocalizations get localizations => AppLocalizations.of(this)!;
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:itcores_internship_project/core/components/bottomsheets/log_bottomsheet.dart';
@@ -7,6 +8,7 @@ import 'package:itcores_internship_project/core/themes/app_colors.dart';
 import 'package:itcores_internship_project/core/utils/app_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:itcores_internship_project/core/utils/app_strings.dart';
+import 'package:itcores_internship_project/features/log/presentation/cubit/item_cubit.dart';
 
 class ExpenseScreen extends StatelessWidget {
   const ExpenseScreen({super.key});
@@ -16,30 +18,23 @@ class ExpenseScreen extends StatelessWidget {
     TextEditingController nameController = TextEditingController();
     return Scaffold(
       bottomSheet: LogBottomsheet(
-          onChanged: () {},
-          value: '0',
-          items: <DropdownMenuItem<String>>[
-            DropdownMenuItem(
-                value: '0', child: Text(AppLocalizations.of(context)!.bank)),
-            DropdownMenuItem(
-                value: '1',
-                child: Text(AppLocalizations.of(context)!.debitCard)),
-            DropdownMenuItem(
-                value: '2',
-                child: Text(AppLocalizations.of(context)!.creditCard))
-          ],
-          controller: nameController,
-          text: AppLocalizations.of(context)!.addAttachment,
-          onPressed: () {
-            // Box<ItemModel> itemBox = Hive.box<ItemModel>('items');
-            // itemBox.add(ItemModel(
-            //   reason: 'Reason',
-            //   description: 'Description',
-            //   amount: 0,
-            //   dateTime: DateTime.now(),
-            //   expense: false,
-            // ));
-          }),
+        walletValue: context.read<ItemCubit>().walletValue,
+        items: <DropdownMenuItem<String>>[
+          DropdownMenuItem(
+              value: '0', child: Text(AppLocalizations.of(context)!.bank)),
+          DropdownMenuItem(
+              value: '1', child: Text(AppLocalizations.of(context)!.debitCard)),
+          DropdownMenuItem(
+              value: '2', child: Text(AppLocalizations.of(context)!.creditCard))
+        ],
+        controller: nameController,
+        text: AppLocalizations.of(context)!.addAttachment,
+        onPressed: () {
+        },
+        categoryValue: context.read<ItemCubit>().categoryValue,
+        categoryOnChanged: (String? value) {context.read<ItemCubit>().updateCategoryDropDown(value!);},
+        walletOnChanged: (String? value) {context.read<ItemCubit>().updateWalletDropDown(value!);},
+      ),
       backgroundColor: AppColors.redPrimary,
       appBar: AppBar(
         backgroundColor: AppColors.redPrimary,

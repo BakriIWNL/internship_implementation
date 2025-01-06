@@ -11,4 +11,5 @@ class RouteNames {
   static const String home = "/home";
   static const String expense = "/expense";
   static const String income = "/income";
+  static const String camera = "/camera";
 }

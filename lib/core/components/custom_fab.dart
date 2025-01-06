@@ -3,9 +3,9 @@ import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive/hive.dart';
-import 'package:itcores_internship_project/core/routes/route_names.dart';
 import 'package:itcores_internship_project/core/themes/app_colors.dart';
-import 'package:itcores_internship_project/features/home/data/model/user_model.dart';
+import 'package:itcores_internship_project/core/model/user_model.dart';
+import 'package:itcores_internship_project/core/utils/app_strings.dart';
 
 class CustomExpandableFab extends StatelessWidget {
   const CustomExpandableFab({super.key});
@@ -63,7 +63,7 @@ class CustomExpandableFab extends StatelessWidget {
               icon: Icon(Icons.close,size: 40.sp,
               color: AppColors.white,),
               onPressed: (){
-                context.go(RouteNames.income);
+                context.goNamed(AppStrings.income);
               },
             ),
           ),
@@ -81,9 +81,9 @@ class CustomExpandableFab extends StatelessWidget {
               icon: Icon(Icons.close,size: 40.sp,
               color: AppColors.white,),
               onPressed: (){
-                Box<UserModel> userBox = Hive.box<UserModel>('user');
+                Box<UserModel> userBox = Hive.box<UserModel>(AppStrings.userHiveBox);
                 UserModel user;
-                user = userBox.get("user") as UserModel;
+                user = userBox.get(AppStrings.userHiveBox) as UserModel;
                 debugPrint(user.accountAmounts.toString());
               },
             ),

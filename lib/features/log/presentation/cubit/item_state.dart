@@ -2,18 +2,24 @@ part of 'item_cubit.dart';
 
 class ItemState extends Equatable {
   final GenericStates state;
-  const ItemState({required this.state});
+  final List<ItemModel> items;
 
-  factory ItemState.initial(){
-    return const ItemState(state: GenericStates.initial);
+  const ItemState({required this.state, this.items = const []});
+
+  factory ItemState.initial() {
+    return const ItemState(state: GenericStates.initial, items: []);
   }
 
   ItemState copyWith({
-    GenericStates? state
-  }){
-    return ItemState(state: state ?? this.state);
+    GenericStates? state,
+    List<ItemModel>? items,
+  }) {
+    return ItemState(
+      state: state ?? this.state,
+      items: items ?? this.items,
+    );
   }
 
   @override
-  List<Object> get props => [state];
+  List<Object> get props => [state, items];
 }

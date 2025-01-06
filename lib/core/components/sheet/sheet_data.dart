@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:itcores_internship_project/core/utils/app_strings.dart';
 
 class SheetData {
 
@@ -10,13 +11,13 @@ class SheetData {
 
   static Map<String,SheetData> getSheetData(BuildContext context){ 
     return {
-      context.loc.expenses:SheetData(title: context.loc.expenses,header: context.loc.howMuch),
-      context.loc.income:SheetData(title: context.loc.income,header: context.loc.howMuch),
-      context.loc.balance:SheetData(title: context.loc.addNewWallet,header: context.loc.balance),
+      AppStrings.expense:SheetData(title: context.localizations.expenses,header: context.localizations.howMuch),
+      AppStrings.income:SheetData(title: context.localizations.income,header: context.localizations.howMuch),
+      AppStrings.balance:SheetData(title: context.localizations.addNewWallet,header: context.localizations.balance),
     };
   }
 }
 
 extension AppLocalizationsExtensions on BuildContext {
-  AppLocalizations get loc => AppLocalizations.of(this)!;
+  AppLocalizations get localizations => AppLocalizations.of(this)!;
 }
